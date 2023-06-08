@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        customHeroLogo: '1975px'
+      },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
       },
