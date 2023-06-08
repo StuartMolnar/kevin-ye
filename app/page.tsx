@@ -12,6 +12,7 @@ export default function Home() {
 
         <section className="relative flex mx-64 mt-24">
           <div className="z-10 flex flex-col">
+            <div>
               <p className="text-hero font-heavy">Transformation Coach</p>
               <p className="text-hero font-heavy">Personal Trainer</p>
               <p className="text-hero font-heavy">Powerlifting Expert</p>
