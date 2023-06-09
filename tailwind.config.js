@@ -5,10 +5,13 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus'],
+  },
   theme: {
     extend: {
       screens: {
-        customHeroLogo: '1975px'
+        customHeroLogo: '1650px'
       },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
@@ -35,6 +38,29 @@ module.exports = {
       },
       maxWidth: {
         '112': '28rem', /* 448px */
+      },
+      keyframes: {
+        'slide-in': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        'slide-out-right': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        'slide-out-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        'slide-in': 'slide-in 0.5s ease-in-out',
+        'slide-out-right': 'slide-out-right 0.5s ease-in-out',
+        'slide-out-left': 'slide-out-left 0.5s ease-in-out',
+      },
+      translate: {
+        'full': '100%',
+        '-full': '-100%',
       },
     },
   },
