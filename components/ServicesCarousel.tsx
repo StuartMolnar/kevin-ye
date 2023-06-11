@@ -1,9 +1,7 @@
 'use client';
-import React, {  } from 'react';
+import React, { useState } from 'react';
 import ServiceCard from './ServiceCard';
-import Carousel from 'react-multi-carousel';
-import "react-multi-carousel/lib/styles.css";
-import { ArrowLeft, ArrowRight } from './CarouselArrows';
+import { useTransition, animated } from 'react-spring';
 
 const services = [
     {
@@ -31,57 +29,63 @@ const services = [
       func: () => { console.log("Function for service 4"); }  
     },
 ];
-
-const responsive = {
-    desktop: { breakpoint: { max: 4000, min: 1450 }, items: 3, slidesToSlide: 1 },
-    tablet: { breakpoint: { max: 1450, min: 768 }, items: 1, slidesToSlide: 1 },
-    mobile: { breakpoint: { max: 768, min: 0 }, items: 1, slidesToSlide: 1 },
-  };
   
 const ServicesCarousel = () => {
-    return (
-        <section className='flex flex-col justify-center pt-[118px]'>
-            <div className="flex flex-col text-center">
-                <h1 className="font-bold text-h1">
-                    Ready to make a change?
-                </h1>
-                <p className="font-medium">
-                    Join me in unlocking your potential and taking your fitness and performance to new heights.
-                </p>
-            </div>
-            <div className="relative pt-[90px] px-[200px]">
-                <Carousel
-                    swipeable={true}
-                    draggable={true}
-                    showDots={false}
-                    responsive={responsive}
-                    ssr={false}
-                    infinite={false}
-                    autoPlay={false}
-                    keyBoardControl={true}
-                    customTransition="all 0.5s"
-                    transitionDuration={500}
-                    containerClass="carousel-container"
-                    removeArrowOnDeviceType={["mobile"]}
-                    deviceType="desktop"
-                    customLeftArrow={<ArrowLeft />}
-                    customRightArrow={<ArrowRight />}
-                    arrows={true}
-                >
-                {services.map((service) => (
-                    <ServiceCard
-                    key={service.title}
-                    title={service.title}
-                    imageUrl={service.imageUrl}
-                    description={service.description}
-                    func={service.func}
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  const goToLeft = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(oldIndex => oldIndex - 1);  // Go to previous item
+    }
+  };
+
+  const goToRight = () => {
+    if (currentIndex < services.length - 3) {
+      setCurrentIndex(oldIndex => oldIndex + 1);  // Go to next item
+    }
+  };
+
+  return (
+    <section className='flex flex-col justify-center pt-[118px]'>
+        <div className="flex flex-col text-center">
+            <h1 className="font-bold text-h1">
+                Ready to make a change?
+            </h1>
+            <p className="font-medium">
+                Join me in unlocking your potential and taking your fitness and performance to new heights.
+            </p>
+        </div>
+        <div className="flex items-center justify-between w-full">
+            <button 
+                onClick={goToLeft} 
+                disabled={currentIndex === 0}
+                className={`px-4 py-2 rounded-md ${currentIndex === 0 ? 'bg-gray-500 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'}`}
+            >
+                Previous
+            </button>
+            <div className="flex mx-10">
+                {services.slice(currentIndex, currentIndex + 3).map((service, index) => (
+                    <ServiceCard 
+                        key={index}
+                        title={service.title} 
+                        imageUrl={service.imageUrl} 
+                        description={service.description} 
+                        func={service.func} 
                     />
                 ))}
-                </Carousel>
             </div>
+            <button 
+                onClick={goToRight} 
+                disabled={currentIndex === services.length - 3}
+                className={`px-4 py-2 rounded-md ${currentIndex === services.length - 3 ? 'bg-gray-500 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'}`}
+            >
+                Next
+            </button>
+        </div>
+    </section>
+  );
+};
 
-        </section>
-    );
-  };
-  
-  export default ServicesCarousel;
+export default ServicesCarousel;
+
+// {services.map((service, index) => (<ServiceCard title={service.title} imageUrl={service.imageUrl} description={service.description} func={service.func} />}

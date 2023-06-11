@@ -2,12 +2,12 @@ type ServiceCardProps = {
   title: string,
   imageUrl: string,
   description: string,
-  func: () => any, 
+  func: () => any,
 };
 
-const ServiceCard = ({ title, imageUrl, description, func }: ServiceCardProps) => {
+const ServiceCard = ({ title, imageUrl, description, func}: ServiceCardProps) => {
     return (
-      <div className="card w-[480px] flex flex-col h-full">
+      <div className="flex flex-col flex-grow-0 flex-shrink-0 h-full card w-[480px]">
         <div className="h-[320px]">
             <img src={imageUrl} alt={title} className="object-cover w-full h-full"/>
         </div>
