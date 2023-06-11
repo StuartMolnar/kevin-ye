@@ -1,7 +1,9 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import ServiceCard from './ServiceCard';
-import { useTransition, animated } from 'react-spring';
+import Slider, { Settings } from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const services = [
     {
@@ -29,24 +31,34 @@ const services = [
       func: () => { console.log("Function for service 4"); }  
     },
 ];
-  
+
+interface SliderWithRef extends Slider {
+  slickNext: () => void;
+  slickPrev: () => void;
+}
+
 const ServicesCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  
-  const goToLeft = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(oldIndex => oldIndex - 1);  // Go to previous item
-    }
+  const sliderRef = useRef<SliderWithRef>(null);
+
+  const settings: Settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
   };
 
-  const goToRight = () => {
-    if (currentIndex < services.length - 3) {
-      setCurrentIndex(oldIndex => oldIndex + 1);  // Go to next item
-    }
+  const handlePrev = () => {
+    sliderRef.current?.slickPrev();
+  };
+
+  const handleNext = () => {
+    sliderRef.current?.slickNext();
   };
 
   return (
-    <section className='flex flex-col justify-center pt-[118px]'>
+    <section>
+      <div className='relative flex flex-col items-center justify-center pt-[118px]'>
         <div className="flex flex-col text-center">
             <h1 className="font-bold text-h1">
                 Ready to make a change?
@@ -55,34 +67,28 @@ const ServicesCarousel = () => {
                 Join me in unlocking your potential and taking your fitness and performance to new heights.
             </p>
         </div>
-        <div className="flex items-center justify-between w-full">
-            <button 
-                onClick={goToLeft} 
-                disabled={currentIndex === 0}
-                className={`px-4 py-2 rounded-md ${currentIndex === 0 ? 'bg-gray-500 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'}`}
-            >
-                Previous
-            </button>
-            <div className="flex mx-10">
-                {services.slice(currentIndex, currentIndex + 3).map((service, index) => (
-                    <ServiceCard 
-                        key={index}
-                        title={service.title} 
-                        imageUrl={service.imageUrl} 
-                        description={service.description} 
-                        func={service.func} 
-                    />
-                ))}
-            </div>
-            <button 
-                onClick={goToRight} 
-                disabled={currentIndex === services.length - 3}
-                className={`px-4 py-2 rounded-md ${currentIndex === services.length - 3 ? 'bg-gray-500 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'}`}
-            >
-                Next
-            </button>
-        </div>
-    </section>
+      </div>
+
+      <div className='relative flex'>
+        
+        <img src="/carousel-arrow-left.jpg" className="absolute w-[55px] h-[55px] left-4 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handlePrev}/>
+        <Slider {...settings} ref={sliderRef} className="w-4/5 mx-auto">
+          {services.map((service, index) => (
+              <div key={index} className="flex items-center justify-center">
+                  <ServiceCard 
+                      title={service.title} 
+                      imageUrl={service.imageUrl} 
+                      description={service.description} 
+                      func={service.func} 
+                  />
+              </div>
+          ))}
+        </Slider>
+        
+        <img src="/carousel-arrow-right.jpg" className="absolute w-[55px] h-[55px] right-4 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handleNext}/>
+    </div>
+  </section>
+
   );
 };
 
