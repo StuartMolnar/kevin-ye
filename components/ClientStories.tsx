@@ -40,35 +40,35 @@ const ClientStories = () => {
 
   return (
     <section id="client-stories-section" className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="hidden lg:block relative bg-gold h-[900px] col-span-1">
-            <div className="absolute right-0 w-[15%] h-full bg-white"></div>
-            <img src="/client-story-image.jpg" alt="" className="absolute w-[80%] top-1/2 transform -translate-y-1/2 -right-0 h-[500px] object-cover"/>
-        </div>
+      <div className="hidden lg:block relative bg-gold h-[900px] col-span-1">
+          <div className="absolute right-0 w-[15%] h-full bg-white"></div>
+          <img src="/client-story-image.jpg" alt="" className="absolute w-[80%] top-1/2 transform -translate-y-1/2 -right-0 h-[500px] object-cover"/>
+      </div>
 
-        
-        <div className="lg:hidden relative bg-gold h-[650px] col-span-1">
-    <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-full h-[15%] bg-white"></div>
-    <img src="/client-story-image.jpg" alt="" className="absolute max-w-[80vw] left-1/2 transform -translate-x-1/2 bottom-0 h-[500px] object-cover"/>
-</div>
+      
+      <div className="lg:hidden relative bg-gold h-[400px] md:h-[650px] col-span-1">
+        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-full h-[15%] bg-white"></div>
+        <img src="/client-story-image.jpg" alt="" className="absolute max-w-[80vw] left-1/2 transform -translate-x-1/2 bottom-0 h-[300px] md:h-[500px] object-cover"/>
+      </div>
 
-        <div className="flex flex-col col-span-1">
-        
-            
-            <Slider {...settings} ref={sliderRef} className="w-4/5 mx-auto pt-[80px] lg:pt-[114px]">
-            {clients.map((client, index) => (
-                <div key={index} className="flex items-center justify-center">
-                    <ClientStory
-                        title={client.title} 
-                        description={client.description} 
-                    />
-                </div>
-            ))}
-            </Slider>
-              <div className="flex w-4/5 mx-auto pt-[26px] space-x-4">
-                <img src="/carousel-arrow-left.jpg" className=" w-[55px] h-[55px] cursor-pointer" onClick={handlePrev}/>
-                <img src="/carousel-arrow-right.jpg" className=" w-[55px] h-[55px] cursor-pointer" onClick={handleNext}/>
+      <div className="flex flex-col col-span-1">
+      
+          
+          <Slider {...settings} ref={sliderRef} className="w-4/5 mx-auto pt-[80px] lg:pt-[114px]">
+          {clients.map((client, index) => (
+              <div key={index} className="flex items-center justify-center">
+                  <ClientStory
+                      title={client.title} 
+                      description={client.description} 
+                  />
               </div>
-    </div>
+          ))}
+          </Slider>
+            <div className="flex w-4/5 mx-auto pt-[26px] space-x-4">
+              <img src="/carousel-arrow-left.jpg" className=" w-[55px] h-[55px] cursor-pointer" onClick={handlePrev}/>
+              <img src="/carousel-arrow-right.jpg" className=" w-[55px] h-[55px] cursor-pointer" onClick={handleNext}/>
+            </div>
+      </div>
     </section>
 
     

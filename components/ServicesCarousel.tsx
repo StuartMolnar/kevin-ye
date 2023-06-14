@@ -102,7 +102,7 @@ const ServicesCarousel = () => {
   return (
     <section id="services-section" >
       <div className='relative flex flex-col items-center justify-center pt-[118px]'>
-        <div className="flex flex-col text-center">
+        <div className="flex flex-col px-6 text-center">
             <h1 className="font-bold text-h1">
                 Ready to make a change?
             </h1>
@@ -113,7 +113,7 @@ const ServicesCarousel = () => {
       </div>
 
       <div className='relative flex pt-[90px]'>        
-        <img src="/carousel-arrow-left.jpg" className={currentSlide === 0 ? "hidden" : "hidden md:block absolute w-[55px] h-[55px] left-16 top-1/2 transform -translate-y-1/2 cursor-pointer"} onClick={handlePrev}/>
+        <img src="/carousel-arrow-left.jpg" className={currentSlide === 0 ? "hidden" : "hidden md:block z-30 absolute w-[55px] h-[55px] left-16 top-1/2 transform -translate-y-1/2 cursor-pointer"} onClick={handlePrev}/>
 
         <Slider {...settings} ref={sliderRef} className="w-4/5 mx-auto">
           {services.map((service, index) => (
@@ -128,7 +128,7 @@ const ServicesCarousel = () => {
           ))}
         </Slider>
         
-        <img src="/carousel-arrow-right.jpg" className={currentSlide + slidesToShow >= services.length ? "hidden" : "hidden md:block absolute w-[55px] h-[55px] right-16 top-1/2 transform -translate-y-1/2 cursor-pointer"} onClick={handleNext}/>
+        <img src="/carousel-arrow-right.jpg" className={currentSlide + slidesToShow >= services.length ? "hidden" : "hidden md:block z-30 absolute w-[55px] h-[55px] right-16 top-1/2 transform -translate-y-1/2 cursor-pointer"} onClick={handleNext}/>
       </div>
     </section>
 

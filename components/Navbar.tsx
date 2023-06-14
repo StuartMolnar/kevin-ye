@@ -24,13 +24,13 @@ const Navbar = () => {
             if (show !== isScrolled) {
                 setIsScrolled(show);
             }
-
+        
             const current = sections.find(
-                (section) =>
+                (section: HTMLElement) =>
                     section.getBoundingClientRect().top > 0 &&
                     section.getBoundingClientRect().top < window.innerHeight / 2
             );
-
+        
             if (current && activeSection !== current.id) {
                 setActiveSection(current.id);
             }

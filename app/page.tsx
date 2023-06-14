@@ -14,12 +14,12 @@ export default function Home() {
 
         <Hero />
 
-        <section id="about-section" className="flex pt-32 ">
-            <div className='w-1/2'>
-              <img src="/about-image.jpg" alt="" className='object-cover w-full h-[350px] md:h-[450px] xl:h-[634px] transition-all duration-200 ease-in-out'/>
+        <section id="about-section" className="flex flex-col pt-32 md:flex-row ">
+            <div className='md:w-1/2'>
+              <img src="/about-image.jpg" alt="" className='object-cover w-full h-[400px] md:h-[450px] xl:h-[634px] transition-all duration-200 ease-in-out'/>
             </div>
 
-            <div className="flex flex-col justify-center w-1/2 max-w-[500px] ml-[60px] xl:ml-[130px] pr-[60px] mr-auto transition-all duration-200 ease-in-out">
+            <div className="flex flex-col justify-center md:w-1/2 max-w-[500px] mx-auto md:ml-[60px] xl:ml-[130px] md:pr-[60px] mr-auto transition-all duration-200 ease-in-out px-6 pt-[40px] md:pt-0">
               <h1 className="font-bold text-h1">
                 About Kevin Ye
               </h1>
@@ -27,13 +27,13 @@ export default function Home() {
                 <img src="/about-bar-gold.svg" alt="" className="w-24 h-3" />
                 <img src="/about-bar-black.svg" alt="" className="w-24 h-3 -ml-1" />
               </div>
-              <p className="py-10">
+              <p className="my-10 max-h-[450px] md:max-h-[10000px] overflow-auto">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt scelerisque. Suspendisse potenti. Sed sed porttitor lacus. Nunc et ante id purus maximus rhoncus. Quisque ac est eu nunc commodo molestie id at dui. Aenean egestas tellus ante, ut maximus nunc luctus eget. Sed tincidunt id tortor quis venenatis. Suspendisse rutrum accumsan congue. Proin pharetra tincidunt enim, et fringilla leo interdum in. Cras eget magna egestas, semper felis facilisis, volutpat nisi. Donec ex massa, semper eu urna at, bibendum dapibus nulla. Sed tristique dignissim feugiat.
               </p>
             </div>
         </section>
 
-        <section className="bg-gold w-full py-[70px] flex flex-col justify-center items-center transition-all duration-200 ease-in-out">
+        <section className="bg-gold w-full py-[70px] flex flex-col justify-center items-center transition-all duration-200 ease-in-out px-10">
           <h3 className="font-medium text-center text-h3 max-w-[900px]">
             “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci.”
           </h3>
