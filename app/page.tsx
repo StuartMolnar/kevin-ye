@@ -16,10 +16,10 @@ export default function Home() {
 
         <section id="about-section" className="flex pt-32 ">
             <div className='w-1/2'>
-              <img src="/about-image.jpg" alt="" className='object-cover w-full h-[350px] md:h-[450px] xl:h-[634px]'/>
+              <img src="/about-image.jpg" alt="" className='object-cover w-full h-[350px] md:h-[450px] xl:h-[634px] transition-all duration-200 ease-in-out'/>
             </div>
 
-            <div className="flex flex-col justify-center w-1/2 max-w-[500px] ml-[60px] 2xl:ml-[130px] pr-[60px] mr-auto transition-all duration-200 ease-in-out">
+            <div className="flex flex-col justify-center w-1/2 max-w-[500px] ml-[60px] xl:ml-[130px] pr-[60px] mr-auto transition-all duration-200 ease-in-out">
               <h1 className="font-bold text-h1">
                 About Kevin Ye
               </h1>
@@ -33,7 +33,7 @@ export default function Home() {
             </div>
         </section>
 
-        <section className="bg-gold w-full py-[70px] flex flex-col justify-center items-center">
+        <section className="bg-gold w-full py-[70px] flex flex-col justify-center items-center transition-all duration-200 ease-in-out">
           <h3 className="font-medium text-center text-h3 max-w-[900px]">
             “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci.”
           </h3>
