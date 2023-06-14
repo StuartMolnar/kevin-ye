@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import ServiceCard from './ServiceCard';
 import Slider, { Settings } from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -37,8 +37,46 @@ interface SliderWithRef extends Slider {
   slickPrev: () => void;
 }
 
+const breakpoint_large = 1850;
+const breakpoint_medium = 1275;
+
+const responsive = [
+  {
+    breakpoint: breakpoint_large,
+    settings: {
+      slidesToShow: 2
+    }
+  },
+  {
+    breakpoint: breakpoint_medium,
+    settings: {
+      slidesToShow: 1
+    }
+  }
+]
+
 const ServicesCarousel = () => {
   const sliderRef = useRef<SliderWithRef>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(3); // default slidesToShow
+
+  // Update slidesToShow based on window size
+  useEffect(() => {
+    const updateSlidesToShow = () => {
+      if (window.innerWidth < breakpoint_medium) {
+        setSlidesToShow(1);
+      } else if (window.innerWidth < breakpoint_large) {
+        setSlidesToShow(2);
+      } else {
+        setSlidesToShow(3);
+      }
+    };
+
+    window.addEventListener('resize', updateSlidesToShow);
+    updateSlidesToShow();  // Initial call
+
+    return () => window.removeEventListener('resize', updateSlidesToShow);
+  }, []);
 
   const settings: Settings = {
     dots: true,
@@ -49,20 +87,8 @@ const ServicesCarousel = () => {
     nextArrow: <div></div>,
     prevArrow: <div></div>,
     dotsClass: "my-slick-dots slick-dots",
-    responsive: [
-      {
-        breakpoint: 1850,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 1275,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
+    afterChange: (current) => setCurrentSlide(current),
+    responsive: responsive,
   };
 
   const handlePrev = () => {
@@ -86,9 +112,9 @@ const ServicesCarousel = () => {
         </div>
       </div>
 
-      <div className='relative flex pt-[90px]'>
-        
-        <img src="/carousel-arrow-left.jpg" className="hidden md:block absolute w-[55px] h-[55px] left-16 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handlePrev}/>
+      <div className='relative flex pt-[90px]'>        
+        <img src="/carousel-arrow-left.jpg" className={currentSlide === 0 ? "hidden" : "hidden md:block absolute w-[55px] h-[55px] left-16 top-1/2 transform -translate-y-1/2 cursor-pointer"} onClick={handlePrev}/>
+
         <Slider {...settings} ref={sliderRef} className="w-4/5 mx-auto">
           {services.map((service, index) => (
               <div key={index} className="flex items-center justify-center">
@@ -102,13 +128,11 @@ const ServicesCarousel = () => {
           ))}
         </Slider>
         
-        <img src="/carousel-arrow-right.jpg" className="hidden md:block absolute w-[55px] h-[55px] right-16 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handleNext}/>
-    </div>
-  </section>
+        <img src="/carousel-arrow-right.jpg" className={currentSlide + slidesToShow >= services.length ? "hidden" : "hidden md:block absolute w-[55px] h-[55px] right-16 top-1/2 transform -translate-y-1/2 cursor-pointer"} onClick={handleNext}/>
+      </div>
+    </section>
 
   );
 };
 
 export default ServicesCarousel;
-
-// {services.map((service, index) => (<ServiceCard title={service.title} imageUrl={service.imageUrl} description={service.description} func={service.func} />}

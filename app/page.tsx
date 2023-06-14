@@ -1,10 +1,12 @@
 import ServicesCarousel from '@/components/ServicesCarousel';
 import ClientStories from '@/components/ClientStories';
+import Navbar from '@/components/Navbar';
 
 export default function Home() {
   return (
     <div>
 
+      <Navbar />
 
       <main className="min-h-screen font-normal text-black bg-white font-poppins text-body">
 
