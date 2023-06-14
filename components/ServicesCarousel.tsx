@@ -41,11 +41,28 @@ const ServicesCarousel = () => {
   const sliderRef = useRef<SliderWithRef>(null);
 
   const settings: Settings = {
-    dots: false,
+    dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    nextArrow: <div></div>,
+    prevArrow: <div></div>,
+    dotsClass: "my-slick-dots slick-dots",
+    responsive: [
+      {
+        breakpoint: 1850,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 1275,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
   };
 
   const handlePrev = () => {
@@ -63,15 +80,15 @@ const ServicesCarousel = () => {
             <h1 className="font-bold text-h1">
                 Ready to make a change?
             </h1>
-            <p className="font-medium">
+            <p className="font-medium text-header-sub pt-[28px]">
                 Join me in unlocking your potential and taking your fitness and performance to new heights.
             </p>
         </div>
       </div>
 
-      <div className='relative flex'>
+      <div className='relative flex pt-[90px]'>
         
-        <img src="/carousel-arrow-left.jpg" className="absolute w-[55px] h-[55px] left-4 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handlePrev}/>
+        <img src="/carousel-arrow-left.jpg" className="hidden md:block absolute w-[55px] h-[55px] left-16 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handlePrev}/>
         <Slider {...settings} ref={sliderRef} className="w-4/5 mx-auto">
           {services.map((service, index) => (
               <div key={index} className="flex items-center justify-center">
@@ -85,7 +102,7 @@ const ServicesCarousel = () => {
           ))}
         </Slider>
         
-        <img src="/carousel-arrow-right.jpg" className="absolute w-[55px] h-[55px] right-4 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handleNext}/>
+        <img src="/carousel-arrow-right.jpg" className="hidden md:block absolute w-[55px] h-[55px] right-16 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handleNext}/>
     </div>
   </section>
 

@@ -1,4 +1,5 @@
-import ServicesCarousel from '../components/ServicesCarousel';
+import ServicesCarousel from '@/components/ServicesCarousel';
+import ClientStories from '@/components/ClientStories';
 
 export default function Home() {
   return (
@@ -79,6 +80,52 @@ export default function Home() {
         </section>
 
         <ServicesCarousel />
+
+        <section className="flex">
+          <h2 className="w-full p-32 font-bold text-center text-h2">Questionnaire Component Here</h2>
+        </section>
+
+        <ClientStories />
+
+        <section className="flex items-center pt-20">
+        <div className="flex w-3/5">
+          <div className="flex flex-col max-w-[600px] ml-auto mr-[40%] pl-32">
+            <h1 className="font-bold text-h1">
+                Workout with me
+              </h1>
+              <div className="flex pt-12">
+                <img src="/hero-bar-gold.svg" alt="" className="w-[154px] h-3" />
+                <img src="/hero-bar-black.svg" alt="" className="w-[154px] h-3 ml-1" />
+              </div>
+              <p className="pt-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt.
+              </p>
+              <h2 className="pt-16 font-bold text-h2">
+                address line 1
+              </h2>
+              <h2 className="font-bold text-h2">
+                address line 2
+              </h2>
+              <h2 className="font-bold text-h2">
+                richmond BC, VXX XXX
+              </h2>
+
+              <h2 className="pt-6 font-bold text-h2">
+              (XXX)-XXX-XXXX
+              </h2>
+
+              <h2 className="pt-6 font-bold text-h2">
+                kevinye@email.com
+              </h2>
+          </div>
+            
+          </div>
+
+          <img src="/footer-image.jpg" alt="" className="object-cover w-2/5 h-screen"/>
+          
+        </section>
+
+
       </main>
     </div>
   )
