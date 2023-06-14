@@ -39,28 +39,19 @@ module.exports = {
       maxWidth: {
         '112': '28rem', /* 448px */
       },
+      animation: {
+        'slide-in': 'slide-in 0.5s forwards',
+        'slide-out': 'slide-out 0.5s forwards',
+      },
       keyframes: {
         'slide-in': {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' },
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(0)' },
         },
-        'slide-out-right': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(100%)' },
+        'slide-out': {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(100%)' },
         },
-        'slide-out-left': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-100%)' },
-        },
-      },
-      animation: {
-        'slide-in': 'slide-in 0.5s ease-in-out',
-        'slide-out-right': 'slide-out-right 0.5s ease-in-out',
-        'slide-out-left': 'slide-out-left 0.5s ease-in-out',
-      },
-      translate: {
-        'full': '100%',
-        '-full': '-100%',
       },
     },
   },

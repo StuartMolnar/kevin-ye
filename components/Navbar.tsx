@@ -6,12 +6,18 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [sections, setSections] = useState<HTMLElement[]>([]);
     const [activeSection, setActiveSection] = useState('');
+    const [isOpen, setOpen] = useState(false);
 
     const smoothScrollTo = (id: string) => {
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     };
 
-    // handle scroll state
+    const smoothScrollAndCloseMenu = (id: string) => {
+        smoothScrollTo(id);
+        setOpen(false);
+    };
+
+    // underlines the navbar link based on currently visible page section
     useEffect(() => {
         const handleScroll = () => {
             const show = window.scrollY > 50;
@@ -50,15 +56,33 @@ const Navbar = () => {
     
 
   return (
-    <section className={`bg-white fixed top-0 inset-x-0 z-50 flex items-center px-[200px] transition-all duration-200 ease-in-out ${isScrolled ? 'py-[20px]' : 'py-[60px]'}`}>
-        <img onClick={() => smoothScrollTo('hero-section')} src="/kevin-ye-logo-navbar.svg" alt="" className="h-[65px] w-[169px] cursor-pointer" />
-        <div className="mx-auto space-x-4 font-medium text-navbar">
-            <div onClick={() => smoothScrollTo('about-section')} id="about-section-link" className="inline-block cursor-pointer">About</div>
-            <div onClick={() => smoothScrollTo('services-section')} id="services-section-link" className="inline-block cursor-pointer">Fitness Programs</div>
-            <div onClick={() => smoothScrollTo('quiz-section')} id="quiz-section-link" className="inline-block cursor-pointer">Take a Quiz</div>
-            <div onClick={() => smoothScrollTo('client-stories-section')} id="client-stories-section-link" className="inline-block cursor-pointer">Client Stories</div>
+    <section>
+        <div className={`z-40 bg-white fixed top-0 inset-x-0 flex items-center px-[60px] xl:px-[200px] transition-all duration-200 ease-in-out ${isScrolled ? 'py-[20px]' : 'py-[60px]'}`}>
+            <img onClick={() => smoothScrollAndCloseMenu('hero-section')} src="/kevin-ye-logo-navbar.svg" alt="" className="scale-75 md:scale-100 h-[65px] w-[169px] cursor-pointer" />
+            <div className="mx-auto space-x-4 font-medium text-navbar">
+                <div onClick={() => smoothScrollTo('about-section')} id="about-section-link" className="hidden cursor-pointer xl:inline-block">About</div>
+                <div onClick={() => smoothScrollTo('services-section')} id="services-section-link" className="hidden cursor-pointer xl:inline-block">Fitness Programs</div>
+                <div onClick={() => smoothScrollTo('quiz-section')} id="quiz-section-link" className="hidden cursor-pointer xl:inline-block">Take a Quiz</div>
+                <div onClick={() => smoothScrollTo('client-stories-section')} id="client-stories-section-link" className="hidden cursor-pointer xl:inline-block">Client Stories</div>
+            </div>
+            <div onClick={() => smoothScrollTo('contact-section')} className="hidden xl:inline-block bg-black text-white py-[15.5px] px-[30px] cursor-pointer rounded-[2.5px]">Get In Touch</div>
         </div>
-        <div onClick={() => smoothScrollTo('contact-section')} className="bg-black text-white inline-block py-[15.5px] px-[30px] cursor-pointer">Get In Touch</div>
+
+
+        {/* mobile navigation menu */}
+        <div className={`w-3/4 fixed top-0 bottom-0 right-0 bg-opacity-[1] z-50 flex flex-col items-center justify-center space-y-4 bg-gold text-h3 transform transition-transform duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+            <div onClick={() => smoothScrollAndCloseMenu('about-section')} className="cursor-pointer hover:font-bold">About</div>
+            <div onClick={() => smoothScrollAndCloseMenu('services-section')} className="cursor-pointer hover:font-bold">Fitness Programs</div>
+            <div onClick={() => smoothScrollAndCloseMenu('quiz-section')} className="cursor-pointer hover:font-bold">Take a Quiz</div>
+            <div onClick={() => smoothScrollAndCloseMenu('client-stories-section')} className="cursor-pointer hover:font-bold">Client Stories</div>
+            <div onClick={() => smoothScrollAndCloseMenu('contact-section')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</div>
+        </div>
+        
+        
+
+        <div className={`z-50 fixed xl:hidden right-[60px] transition-all duration-200 ease-in-out ${isScrolled ? 'py-[28px]' : 'py-[70px]'}`}>
+            <Hamburger toggled={isOpen} toggle={setOpen} />
+        </div>
     </section>
 
     

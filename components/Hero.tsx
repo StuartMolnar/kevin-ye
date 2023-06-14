@@ -46,7 +46,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="absolute right-0 customHeroLogo:left-[50%]">
+          <div className="absolute right-0 customHeroLogo:left-[50%] transition-all duration-200 ease-in-out">
             <img src="/kevin-ye-logo-hero.svg" alt="" className="min-w-[622px] min-h-[632px]"/>
           </div>
         </section>

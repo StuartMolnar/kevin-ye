@@ -14,12 +14,12 @@ export default function Home() {
 
         <Hero />
 
-        <section id="about-section" className="flex pt-32">
+        <section id="about-section" className="flex pt-32 ">
             <div className='w-1/2'>
               <img src="/about-image.jpg" alt="" className='object-cover w-full h-[350px] md:h-[450px] xl:h-[634px]'/>
             </div>
 
-            <div className="flex flex-col justify-center w-1/2 pl-[130px] pr-[200px]">
+            <div className="flex flex-col justify-center w-1/2 max-w-[500px] ml-[60px] 2xl:ml-[130px] pr-[60px] mr-auto transition-all duration-200 ease-in-out">
               <h1 className="font-bold text-h1">
                 About Kevin Ye
               </h1>
@@ -27,7 +27,7 @@ export default function Home() {
                 <img src="/about-bar-gold.svg" alt="" className="w-24 h-3" />
                 <img src="/about-bar-black.svg" alt="" className="w-24 h-3 -ml-1" />
               </div>
-              <p className="pt-10">
+              <p className="py-10">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt scelerisque. Suspendisse potenti. Sed sed porttitor lacus. Nunc et ante id purus maximus rhoncus. Quisque ac est eu nunc commodo molestie id at dui. Aenean egestas tellus ante, ut maximus nunc luctus eget. Sed tincidunt id tortor quis venenatis. Suspendisse rutrum accumsan congue. Proin pharetra tincidunt enim, et fringilla leo interdum in. Cras eget magna egestas, semper felis facilisis, volutpat nisi. Donec ex massa, semper eu urna at, bibendum dapibus nulla. Sed tristique dignissim feugiat.
               </p>
             </div>
