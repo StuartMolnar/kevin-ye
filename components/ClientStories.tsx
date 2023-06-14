@@ -39,7 +39,7 @@ const ClientStories = () => {
   };
 
   return (
-    <section className="grid grid-cols-2">
+    <section id="client-stories-section" className="grid grid-cols-2">
         <div className="relative bg-gold h-[900px] col-span-1">
             <div className="absolute right-0 w-[15%] h-full bg-white"></div>
             <img src="/client-story-image.jpg" alt="" className="absolute w-[80%] top-1/2 transform -translate-y-1/2 -right-0 h-[500px] object-cover"/>

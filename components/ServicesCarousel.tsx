@@ -100,7 +100,7 @@ const ServicesCarousel = () => {
   };
 
   return (
-    <section>
+    <section id="services-section" >
       <div className='relative flex flex-col items-center justify-center pt-[118px]'>
         <div className="flex flex-col text-center">
             <h1 className="font-bold text-h1">

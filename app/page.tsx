@@ -1,8 +1,10 @@
 import ServicesCarousel from '@/components/ServicesCarousel';
 import ClientStories from '@/components/ClientStories';
 import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
 
 export default function Home() {
+  
   return (
     <div>
 
@@ -10,53 +12,9 @@ export default function Home() {
 
       <main className="min-h-screen font-normal text-black bg-white font-poppins text-body">
 
-        <section className="flex text-navbar">
+        <Hero />
 
-        </section>
-
-        <section className="relative flex mx-[200px] mt-24">
-          <div className="z-10 flex flex-col">
-            <div>
-              <p className="text-hero font-heavy">Transformation Coach</p>
-              <p className="text-hero font-heavy">Personal Trainer</p>
-              <p className="text-hero font-heavy">Powerlifting Expert</p>
-            </div>
-
-            <div className="flex pt-10">
-              <img src="/hero-bar-gold.svg" alt="" className="w-64 h-3" />
-              <img src="/hero-bar-black.svg" alt="" className="w-64 h-3 -ml-2" />
-            </div>
-
-            <div className="pt-10">
-              <p className="font-medium text-hero-sub max-w-112">
-                I help individuals unlock their true potential and overcome limitations set in their mind.
-              </p>
-            </div>
-              
-            <div className="flex pt-10 space-x-5">
-              <a href="" className="">
-                <img src="/linkedin.svg" alt="" className="w-14 h-14" />
-              </a>
-              <a href="" className="">
-                <img src="/insta.svg" alt="" className="w-14 h-14" />
-              </a>
-              <a href="" className="">
-                <img src="/tiktok.svg" alt="" className="w-14 h-14" />
-              </a>
-              <a href="">
-                <div className="h-14 p-4 font-medium flex items-center justify-center border-black border-[1.5px] rounded-[2.5px]">
-                  View My Fitness Programs
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div className="absolute right-0 customHeroLogo:left-[50%]">
-            <img src="/kevin-ye-logo-hero.svg" alt="" className="min-w-[622px] min-h-[632px]"/>
-          </div>
-        </section>
-
-        <section className="flex pt-32">
+        <section id="about-section" className="flex pt-32">
             <div className='w-1/2'>
               <img src="/about-image.jpg" alt="" className='object-cover w-full h-[350px] md:h-[450px] xl:h-[634px]'/>
             </div>
@@ -83,13 +41,13 @@ export default function Home() {
 
         <ServicesCarousel />
 
-        <section className="flex">
+        <section id="quiz-section" className="flex">
           <h2 className="w-full p-32 font-bold text-center text-h2">Questionnaire Component Here</h2>
         </section>
 
         <ClientStories />
 
-        <section className="flex items-center pt-20">
+        <section id="contact-section" className="flex items-center pt-20">
         <div className="flex w-3/5">
           <div className="flex flex-col max-w-[600px] ml-auto mr-[40%] pl-32">
             <h1 className="font-bold text-h1">
