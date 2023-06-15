@@ -70,7 +70,7 @@ const Navbar = () => {
 
 
         {/* mobile navigation menu */}
-        <div className={`w-3/4 fixed top-0 bottom-0 right-0 bg-opacity-[1] z-50 flex flex-col items-center justify-center space-y-4 bg-gold text-h3 transform transition-transform duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className={`w-3/4 min-w-[320px] fixed top-0 bottom-0 right-0 bg-opacity-[1] z-50 flex flex-col items-center justify-center space-y-4 bg-gold text-h3 transform transition-transform duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
             <div onClick={() => smoothScrollAndCloseMenu('about-section')} className="cursor-pointer hover:font-bold">About</div>
             <div onClick={() => smoothScrollAndCloseMenu('services-section')} className="cursor-pointer hover:font-bold">Fitness Programs</div>
             <div onClick={() => smoothScrollAndCloseMenu('quiz-section')} className="cursor-pointer hover:font-bold">Take a Quiz</div>
