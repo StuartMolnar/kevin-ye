@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
 
-      <main className="min-h-screen font-normal text-black bg-white font-poppins text-body">
+      <main className="min-h-screen font-normal text-black bg-white font-poppins text-body pt-[185px]">
 
         <Hero />
 

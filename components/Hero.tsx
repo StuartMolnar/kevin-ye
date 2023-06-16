@@ -11,7 +11,7 @@ const Hero = () => {
     };
 
   return (
-    <section id="hero-section" className="relative flex mx-[200px] pt-[185px]">
+    <section id="hero-section" className="relative flex mx-[200px]">
           <div className="z-10 flex flex-col">
             <div>
               <p className="text-hero font-heavy">Transformation Coach</p>
