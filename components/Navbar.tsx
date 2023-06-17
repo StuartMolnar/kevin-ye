@@ -57,15 +57,15 @@ const Navbar = () => {
 
   return (
     <section>
-        <div className={`z-40 bg-white fixed top-0 inset-x-0 flex items-center px-[60px] xl:px-[200px] transition-all duration-200 ease-in-out ${isScrolled ? 'py-[20px]' : 'py-[60px]'}`}>
-            <img onClick={() => smoothScrollAndCloseMenu('hero-section')} src="/kevin-ye-logo-navbar.svg" alt="" className="scale-75 md:scale-100 h-[65px] w-[169px] cursor-pointer" />
-            <div className="mx-auto space-x-4 font-medium text-navbar">
-                <div onClick={() => smoothScrollTo('about-section')} id="about-section-link" className="hidden cursor-pointer xl:inline-block">About</div>
-                <div onClick={() => smoothScrollTo('services-section')} id="services-section-link" className="hidden cursor-pointer xl:inline-block">Fitness Programs</div>
-                <div onClick={() => smoothScrollTo('quiz-section')} id="quiz-section-link" className="hidden cursor-pointer xl:inline-block">Take a Quiz</div>
-                <div onClick={() => smoothScrollTo('client-stories-section')} id="client-stories-section-link" className="hidden cursor-pointer xl:inline-block">Client Stories</div>
+        <div className={`z-40 bg-white fixed top-0 inset-x-0 flex items-center px-[20px] md:px-[60px] xl:px-[200px] transition-all duration-200 ease-in-out ${isScrolled ? 'py-[20px]' : 'py-[35px] md:py-[60px]'}`}>
+            <img onClick={() => smoothScrollAndCloseMenu('hero-section')} src="/kevin-ye-logo-navbar.svg" alt="" className="scale-75 md:scale-100 h-[65px] w-[169px] cursor-pointer mr-8" />
+            <div className="mx-auto space-x-8 font-medium text-navbar">
+                <div onClick={() => smoothScrollTo('about-section')} id="about-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">About</div>
+                <div onClick={() => smoothScrollTo('services-section')} id="services-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">Fitness Programs</div>
+                <div onClick={() => smoothScrollTo('quiz-section')} id="quiz-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">Take a Quiz</div>
+                <div onClick={() => smoothScrollTo('client-stories-section')} id="client-stories-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">Client Stories</div>
             </div>
-            <div onClick={() => smoothScrollTo('contact-section')} className="hidden xl:inline-block bg-black text-white py-[15.5px] px-[30px] cursor-pointer rounded-[2.5px]">Get In Touch</div>
+            <div onClick={() => smoothScrollTo('contact-section')} className="hidden xl:inline-block bg-black text-white py-[15.5px] px-[30px] cursor-pointer rounded-[2.5px] ml-8">Get In Touch</div>
         </div>
 
 
@@ -80,7 +80,7 @@ const Navbar = () => {
         
         
 
-        <div className={`z-50 fixed xl:hidden right-[60px] transition-all duration-200 ease-in-out ${isScrolled ? 'py-[28px]' : 'py-[70px]'}`}>
+        <div className={`z-50 scale-75 md:scale-100 fixed xl:hidden right-[30px] md:right-[60px] transition-all duration-200 ease-in-out ${isScrolled ? 'py-[28px]' : 'py-[42px] md:py-[70px]'}`}>
             <Hamburger toggled={isOpen} toggle={setOpen} />
         </div>
     </section>

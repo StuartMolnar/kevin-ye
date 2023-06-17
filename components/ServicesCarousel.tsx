@@ -10,25 +10,25 @@ const services = [
       title: 'Strength Training',
       imageUrl: '/strength-training.jpg',
       description: 'My strength training program is designed to help individuals of all fitness levels build strength, increase muscle mass, and achieve their goals. With personalized training plans, expert guidance, emphasis on proper technique, and a focus on progress tracking, I provide a comprehensive and supportive environment for your strength training journey.',
-      func: () => { console.log("Function for service 1"); }  
+      link: '/strength-training'
     },
     {
       title: 'Conditional Training',
       imageUrl: '/conditional-training.jpg',
       description: 'My conditioning training program is tailored to help individuals of all fitness levels improve their overall fitness, enhance athletic performance, and boost endurance. With personalized plans targeting cardiovascular endurance, strength, agility, and flexibility, my dynamic workouts and expert coaching will guide you towards achieving your conditioning goals.',
-      func: () => { console.log("Function for service 2"); }  
+      link: '#'
     },
     {
       title: 'Placeholder1',
       imageUrl: '/placeholder.jpg',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt scelerisque. Suspendisse potenti. Sed sed porttitor lacus. Nunc et ante id purus maximus rhoncus. ',
-      func: () => { console.log("Function for service 3"); }  
+      link: '#' 
     },
     {
       title: 'Placeholder2',
       imageUrl: '/placeholder.jpg',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt scelerisque. Suspendisse potenti. Sed sed porttitor lacus. Nunc et ante id purus maximus rhoncus. ',
-      func: () => { console.log("Function for service 4"); }  
+      link: '#'
     },
 ];
 
@@ -60,7 +60,7 @@ const ServicesCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(3); // default slidesToShow
 
-  // Update slidesToShow based on window size
+  // update slidesToShow based on window size
   useEffect(() => {
     const updateSlidesToShow = () => {
       if (window.innerWidth < breakpoint_medium) {
@@ -73,7 +73,7 @@ const ServicesCarousel = () => {
     };
 
     window.addEventListener('resize', updateSlidesToShow);
-    updateSlidesToShow();  // Initial call
+    updateSlidesToShow(); 
 
     return () => window.removeEventListener('resize', updateSlidesToShow);
   }, []);
@@ -101,28 +101,28 @@ const ServicesCarousel = () => {
 
   return (
     <section id="services-section" >
-      <div className='relative flex flex-col items-center justify-center pt-[118px]'>
-        <div className="flex flex-col px-6 text-center">
+      <div className='relative flex flex-col items-center justify-center pt-10 md:pt-[118px]'>
+        <div className="flex flex-col px-5 text-center">
             <h1 className="font-bold text-h1">
                 Ready to make a change?
             </h1>
-            <p className="font-medium text-header-sub pt-[28px]">
+            <p className="font-medium text-header-sub pt-[24px] md:pt-[28px]">
                 Join me in unlocking your potential and taking your fitness and performance to new heights.
             </p>
         </div>
       </div>
 
-      <div className='relative flex pt-[90px]'>        
+      <div className='relative flex pt-[40px] md:pt-[90px]'>        
         <img src="/carousel-arrow-left.jpg" className={currentSlide === 0 ? "hidden" : "hidden md:block z-30 absolute w-[55px] h-[55px] left-16 top-1/2 transform -translate-y-1/2 cursor-pointer"} onClick={handlePrev}/>
 
-        <Slider {...settings} ref={sliderRef} className="w-4/5 mx-auto">
+        <Slider {...settings} ref={sliderRef} className="w-full mx-auto md:w-4/5">
           {services.map((service, index) => (
               <div key={index} className="flex items-center justify-center">
                   <ServiceCard 
                       title={service.title} 
                       imageUrl={service.imageUrl} 
                       description={service.description} 
-                      func={service.func} 
+                      link={service.link} 
                   />
               </div>
           ))}

@@ -7,3 +7,44 @@
     display: none !important;
   }
 }
+
+@layer utilities {
+  @screen md {
+    .text-navbar {
+      @apply text-navbar-dsk;
+    }
+
+    .text-hero {
+      @apply text-hero-dsk;
+    }
+
+    .text-hero-sub {
+      @apply text-hero-sub-dsk;
+    }
+
+    .text-btn {
+      @apply text-btn-dsk;
+    }
+
+    .text-base {
+      @apply text-base-dsk;
+    }
+
+    .text-h1 {
+      @apply text-h1-dsk;
+    }
+
+    .text-h2 {
+      @apply text-h2-dsk;
+    }
+
+    .text-h3 {
+      @apply text-h3-dsk;
+    }
+
+    .text-header-sub {
+      @apply text-header-sub-dsk;
+    }
+
+  }
+}

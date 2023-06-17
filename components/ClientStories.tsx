@@ -54,7 +54,7 @@ const ClientStories = () => {
       <div className="flex flex-col col-span-1">
       
           
-          <Slider {...settings} ref={sliderRef} className="w-4/5 mx-auto pt-[80px] lg:pt-[114px]">
+          <Slider {...settings} ref={sliderRef} className="w-4/5 mx-auto pt-[40px] md:pt-[80px] lg:pt-[114px]">
           {clients.map((client, index) => (
               <div key={index} className="flex items-center justify-center">
                   <ClientStory
