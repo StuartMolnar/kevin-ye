@@ -1,6 +1,7 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import ClientStory from './ClientStory';
+import CarouselArrow from './CarouselArrow';
 import Slider, { Settings } from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -18,6 +19,7 @@ interface SliderWithRef extends Slider {
 }
 
 const ClientStories = () => {
+  /* ----- Carousel Slider ----- */
   const sliderRef = useRef<SliderWithRef>(null);
 
   const settings: Settings = {
@@ -36,6 +38,26 @@ const ClientStories = () => {
 
   const handleNext = () => {
     sliderRef.current?.slickNext();
+  };
+
+  /* ----- Arrow Hover Effect ----- */
+  const [leftArrowSrc, setLeftArrowSrc] = useState("/carousel-arrow-left.svg");
+  const [rightArrowSrc, setRightArrowSrc] = useState("/carousel-arrow-right.svg");
+
+  const handleMouseEnterLeft = () => {
+    setLeftArrowSrc("/carousel-arrow-left-hover.svg");
+  };
+
+  const handleMouseLeaveLeft = () => {
+    setLeftArrowSrc("/carousel-arrow-left.svg");
+  };
+
+  const handleMouseEnterRight = () => {
+    setRightArrowSrc("/carousel-arrow-right-hover.svg");
+  };
+
+  const handleMouseLeaveRight = () => {
+    setRightArrowSrc("/carousel-arrow-right.svg");
   };
 
   return (
@@ -64,10 +86,10 @@ const ClientStories = () => {
               </div>
           ))}
           </Slider>
-            <div className="flex w-4/5 mx-auto pt-[26px] space-x-4">
-              <img src="/carousel-arrow-left.jpg" className=" w-[55px] h-[55px] cursor-pointer" onClick={handlePrev}/>
-              <img src="/carousel-arrow-right.jpg" className=" w-[55px] h-[55px] cursor-pointer" onClick={handleNext}/>
-            </div>
+          <div className="flex w-4/5 mx-auto pt-[26px] space-x-4">
+            <CarouselArrow initialSrc="/carousel-arrow-left.svg"  hoverSrc="/carousel-arrow-left-hover.svg" onClick={handlePrev}/>
+            <CarouselArrow  initialSrc="/carousel-arrow-right.svg" hoverSrc="/carousel-arrow-right-hover.svg" onClick={handleNext}/>
+          </div>
       </div>
     </section>
 

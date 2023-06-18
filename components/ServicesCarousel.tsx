@@ -1,6 +1,7 @@
 'use client';
 import React, { useRef, useState, useEffect } from 'react';
 import ServiceCard from './ServiceCard';
+import CarouselArrow from './CarouselArrow';
 import Slider, { Settings } from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -56,6 +57,7 @@ const responsive = [
 ]
 
 const ServicesCarousel = () => {
+  /* ----- Carousel Slider ----- */
   const sliderRef = useRef<SliderWithRef>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(3); // default slidesToShow
@@ -112,9 +114,11 @@ const ServicesCarousel = () => {
         </div>
       </div>
 
-      <div className='relative flex pt-[40px] md:pt-[90px]'>        
-        <img src="/carousel-arrow-left.jpg" className={currentSlide === 0 ? "hidden" : "hidden md:block z-30 absolute w-[55px] h-[55px] left-16 top-1/2 transform -translate-y-1/2 cursor-pointer"} onClick={handlePrev}/>
-
+      <div className='relative flex pt-[40px] md:pt-[90px]'>    
+        <div className={currentSlide === 0 ? "hidden" : "hidden md:block z-30 absolute left-16 top-1/2 transform -translate-y-1/2"}>
+          <CarouselArrow initialSrc="/carousel-arrow-left.svg" hoverSrc="/carousel-arrow-left-hover.svg" onClick={handlePrev}/>
+        </div>    
+        
         <Slider {...settings} ref={sliderRef} className="w-full mx-auto md:w-4/5">
           {services.map((service, index) => (
               <div key={index} className="flex items-center justify-center">
@@ -128,7 +132,9 @@ const ServicesCarousel = () => {
           ))}
         </Slider>
         
-        <img src="/carousel-arrow-right.jpg" className={currentSlide + slidesToShow >= services.length ? "hidden" : "hidden md:block z-30 absolute w-[55px] h-[55px] right-16 top-1/2 transform -translate-y-1/2 cursor-pointer"} onClick={handleNext}/>
+        <div className={currentSlide + slidesToShow >= services.length ? "hidden" : "hidden md:block z-30 absolute right-16 top-1/2 transform -translate-y-1/2"}>
+          <CarouselArrow initialSrc="/carousel-arrow-right.svg" hoverSrc="/carousel-arrow-right-hover.svg" onClick={handleNext}/>
+        </div>
       </div>
     </section>
 
