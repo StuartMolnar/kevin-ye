@@ -8,6 +8,11 @@
   }
 }
 
+.slick-next {
+  right: auto !important;
+}
+
+
 @layer utilities {
   @screen md {
     .text-navbar {

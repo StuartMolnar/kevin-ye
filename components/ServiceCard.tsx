@@ -11,7 +11,7 @@ const ServiceCard = ({ title, imageUrl, description, link}: ServiceCardProps) =>
       <div className="h-[320px] w-full max-w-[480px]">
           <img src={imageUrl} alt={title} className="object-cover w-full h-full"/>
       </div>
-      <div className="flex flex-col justify-between w-full md:px-10 pt-5 md:pt-10 max-w-[480px]">
+      <div className="px-[20px] flex flex-col justify-between w-full md:px-10 pt-5 md:pt-10 max-w-[480px]">
           <div className="flex flex-col justify-between">
             <div>
               <h2 className="font-bold text-h2">{title}</h2>
@@ -28,7 +28,7 @@ const ServiceCard = ({ title, imageUrl, description, link}: ServiceCardProps) =>
               <p className="pt-[24px] md:pt-[30px]">{description}</p>
             </div>
             <a href={link} className="pt-[24px] md:pt-[30px]">
-              <button className="w-full mx-2 md:mx-0 md:w-auto my-[15px] py-[15px] px-[30px] bg-black text-white text-center self-start hover:bg-gold hover:text-black">View Program Highlights</button>
+              <div className="my-[15px] py-[15px] px-[30px] bg-black text-white text-center self-start hover:bg-gold hover:text-black">View Program Highlights</div>
             </a>
           </div>
       </div>
