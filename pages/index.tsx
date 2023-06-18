@@ -1,6 +1,7 @@
 import ServicesCarousel from '@/components/ServicesCarousel';
 import ClientStories from '@/components/ClientStories';;
 import Hero from '@/components/Hero';
+import Copyright from '@/components/Copyright';
 
 export default function Home() {
   
@@ -49,44 +50,98 @@ export default function Home() {
 
         <ClientStories />
 
-        <section id="contact-section" className="items-center hidden pt-20 md:flex">
-        <div className="flex w-3/5">
-          <div className="flex flex-col max-w-[600px] ml-auto mr-[40%] pl-32">
-            <h1 className="font-bold text-h1">
-                Workout with me
-              </h1>
-              <div className="flex pt-12">
-                <img src="/hero-bar-gold.svg" alt="" className="w-[154px] h-3" />
-                <img src="/hero-bar-black.svg" alt="" className="w-[154px] h-3 ml-1" />
-              </div>
-              <p className="pt-10">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt.
-              </p>
-              <h2 className="pt-16 font-bold text-h2">
-                address line 1
-              </h2>
-              <h2 className="font-bold text-h2">
-                address line 2
-              </h2>
-              <h2 className="font-bold text-h2">
-                richmond BC, VXX XXX
-              </h2>
+        {/* desktop footer */}
+        <section id="contact-section" className="flex pt-16 md:hidden">
+          
+          <div className="flex flex-col">
+            
 
-              <h2 className="pt-6 font-bold text-h2">
-              (XXX)-XXX-XXXX
-              </h2>
+            <img src="/footer-image.jpg" alt="" className="object-cover w-screen"/>
 
-              <h2 className="pt-6 font-bold text-h2">
-                kevinye@email.com
-              </h2>
+
+            <div className="flex flex-col pt-10 mx-[20px] h-full">
+              <h1 className="font-bold text-h1">
+                  Workout with me
+                </h1>
+                <div className="flex pt-[18px]">
+                  <img src="/hero-bar-gold.svg" alt="" className="w-[154px] h-3" />
+                  <img src="/hero-bar-black.svg" alt="" className="w-[154px] h-3 ml-1" />
+                </div>
+                <p className="pt-[24px]">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt.
+                </p>
+                <p className="pt-16 font-medium">
+                  address line 1
+                </p>
+                <p className="font-medium">
+                  address line 2
+                </p>
+                <p className="font-medium">
+                  richmond BC, VXX XXX
+                </p>
+
+                <h2 className="pt-6 font-medium text-header-sub">
+                (XXX)-XXX-XXXX
+                </h2>
+
+                <h2 className="pt-6 font-medium text-header-sub">
+                  kevinye@email.com
+                </h2>
+                
+                
+                <div className="pt-10">
+                  <Copyright />
+                </div>
+            </div>
+            
           </div>
+
+        </section>
+
+      {/* mobile footer */}
+      <section id="contact-section" className="hidden pt-20 md:flex">
+            
+          <div className="flex w-3/5">
+            <div className="flex flex-col max-w-[500px] mx-[20px] lg:mx-auto">
+              <h1 className="font-bold text-h1">
+                  Workout with me
+                </h1>
+                <div className="flex pt-12">
+                  <img src="/hero-bar-gold.svg" alt="" className="w-[154px] h-3" />
+                  <img src="/hero-bar-black.svg" alt="" className="w-[154px] h-3 ml-1" />
+                </div>
+                <p className="pt-10">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt.
+                </p>
+                <h2 className="pt-16 font-bold text-h2">
+                  address line 1
+                </h2>
+                <h2 className="font-bold text-h2">
+                  address line 2
+                </h2>
+                <h2 className="font-bold text-h2">
+                  richmond BC, VXX XXX
+                </h2>
+
+                <h2 className="pt-6 font-bold text-h2">
+                (XXX)-XXX-XXXX
+                </h2>
+
+                <h2 className="pt-6 font-bold text-h2">
+                  kevinye@email.com
+                </h2>
+                <div className="pt-10">
+                  <Copyright />
+                </div>
+            </div>
             
           </div>
 
           <img src="/footer-image.jpg" alt="" className="object-cover w-2/5 h-screen"/>
-          
+
         </section>
 
+    
 
       </main>
     </div>
