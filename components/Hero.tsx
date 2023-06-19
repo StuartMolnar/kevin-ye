@@ -1,4 +1,3 @@
-'use client';
 import React, { } from 'react';
 
 const Hero = () => {
@@ -13,9 +12,9 @@ const Hero = () => {
     <section id="hero-section" className="relative flex mx-[20px] md:mx-[60px] 3xl:mx-[200px]">
           <div className="z-10 flex flex-col">
             <div>
-              <p className="text-hero font-heavy">Transformation Coach</p>
-              <p className="text-hero font-heavy">Personal Trainer</p>
-              <p className="text-hero font-heavy">Powerlifting Expert</p>
+              <p className="text-hero md:text-hero-dsk font-heavy">Transformation Coach</p>
+              <p className="text-hero md:text-hero-dsk font-heavy">Personal Trainer</p>
+              <p className="text-hero md:text-hero-dsk font-heavy">Powerlifting Expert</p>
             </div>
 
             <div className="flex pt-[18px] md:pt-10">
@@ -24,7 +23,7 @@ const Hero = () => {
             </div>
 
             <div className="pt-[24px] md:pt-10">
-              <p className="font-medium text-hero-sub max-w-112">
+              <p className="font-medium text-hero-sub md:text-hero-sub-dsk max-w-112">
                 I help individuals unlock their true potential and overcome limitations set in their mind.
               </p>
             </div>

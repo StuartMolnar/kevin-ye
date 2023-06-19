@@ -91,6 +91,7 @@ const ServicesCarousel = () => {
     dotsClass: "my-slick-dots slick-dots",
     afterChange: (current) => setCurrentSlide(current),
     responsive: responsive,
+    slide: 'div',
   };
 
   const handlePrev = () => {
@@ -105,10 +106,10 @@ const ServicesCarousel = () => {
     <section id="services-section" >
       <div className='relative flex flex-col items-center justify-center pt-10 md:pt-[118px]'>
         <div className="flex flex-col px-5 text-center">
-            <h1 className="font-bold text-h1">
+            <h1 className="font-bold text-h1 md:text-h1-dsk">
                 Ready to make a change?
             </h1>
-            <p className="font-medium text-header-sub pt-[24px] md:pt-[28px]">
+            <p className="font-medium text-header-sub md:text-header-sub-dsk pt-[24px] md:pt-[28px]">
                 Join me in unlocking your potential and taking your fitness and performance to new heights.
             </p>
         </div>
@@ -119,9 +120,9 @@ const ServicesCarousel = () => {
           <CarouselArrow initialSrc="/carousel-arrow-left.svg" hoverSrc="/carousel-arrow-left-hover.svg" onClick={handlePrev}/>
         </div>    
         
-        <Slider {...settings} ref={sliderRef} className="w-full mx-auto md:w-4/5">
+        <Slider {...settings} ref={sliderRef} className="w-[calc(100%-20%)] mx-auto space-x-5 md:w-4/5 service-carousel">
           {services.map((service, index) => (
-              <div key={index} className="flex items-center justify-center">
+              <div key={index} className="">
                   <ServiceCard 
                       title={service.title} 
                       imageUrl={service.imageUrl} 

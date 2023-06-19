@@ -8,7 +8,7 @@ type ClientStoryProps = {
   
     return (
       <div className="flex flex-col w-full h-full text-black card">
-        <h1 className="font-bold text-h1">{title}</h1>
+        <h1 className="font-bold text-h1 md:text-h1-dsk">{title}</h1>
         <div className="hidden md:flex pt-[12px]">
           <img src="/about-bar-gold.svg" alt="" className="w-24 h-3 -ml-1" />
           <img src="/about-bar-black.svg" alt="" className="w-24 h-3 -ml-1" />

@@ -7,14 +7,14 @@ type ServiceCardProps = {
 
 const ServiceCard = ({ title, imageUrl, description, link}: ServiceCardProps) => {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full card">
+    <div className="flex flex-col items-center justify-center w-full h-full card max-w-[480px] shadow-lg my-5">
       <div className="h-[320px] w-full max-w-[480px]">
           <img src={imageUrl} alt={title} className="object-cover w-full h-full"/>
       </div>
       <div className="px-[20px] flex flex-col justify-between w-full md:px-10 pt-5 md:pt-10 max-w-[480px]">
           <div className="flex flex-col justify-between">
             <div>
-              <h2 className="font-bold text-h2">{title}</h2>
+              <h2 className="font-bold text-h2 md:text-h2-dsk">{title}</h2>
 
               <div className="hidden md:flex pt-[30px]">
                   <img src="/about-bar-gold.svg" alt="" className="w-24 h-3" />

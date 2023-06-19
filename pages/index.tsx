@@ -18,7 +18,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col justify-center md:w-1/2 md:max-w-[500px] ml-0 md:ml-[60px] xl:ml-[130px] md:pr-[60px] mr-auto pt-[40px] px-[20px] md:px-0 md:pt-0 transition-all duration-200 ease-in-out">
-              <h1 className="font-bold text-h1">
+              <h1 className="font-bold text-h1 md:text-h1-dsk">
                 About Kevin Ye
               </h1>
               <div className="hidden pt-3 md:flex">
@@ -37,15 +37,15 @@ export default function Home() {
         
 
         <section className="bg-gold w-full py-[40px] md:py-[70px] px-[20px] md:px-10 flex flex-col justify-center items-center transition-all duration-200 ease-in-out">
-          <h3 className="font-medium text-center text-h3 max-w-[900px]">
-            “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci.”
+          <h3 className="font-medium text-center text-h3 md:text-h3-dsk max-w-[900px]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci.
           </h3>
         </section>
 
         <ServicesCarousel />
 
         <section id="quiz-section" className="flex">
-          <h2 className="w-full p-32 font-bold text-center text-h2">Questionnaire Component Here</h2>
+          <h2 className="w-full p-32 font-bold text-center text-h2 md:text-h2-dsk">Questionnaire Component Here</h2>
         </section>
 
         <ClientStories />
@@ -60,7 +60,7 @@ export default function Home() {
 
 
             <div className="flex flex-col pt-10 mx-[20px] h-full">
-              <h1 className="font-bold text-h1">
+              <h1 className="font-bold text-h1 md:text-h1-dsk">
                   Workout with me
                 </h1>
                 <div className="flex pt-[18px]">
@@ -80,11 +80,11 @@ export default function Home() {
                   richmond BC, VXX XXX
                 </p>
 
-                <h2 className="pt-6 font-medium text-header-sub">
+                <h2 className="pt-6 font-medium text-header-sub md:text-header-sub-dsk">
                 (XXX)-XXX-XXXX
                 </h2>
 
-                <h2 className="pt-6 font-medium text-header-sub">
+                <h2 className="pt-6 font-medium text-header-sub md:text-header-sub-dsk">
                   kevinye@email.com
                 </h2>
                 
@@ -103,7 +103,7 @@ export default function Home() {
             
           <div className="flex w-3/5">
             <div className="flex flex-col max-w-[500px] mx-[20px] lg:mx-auto">
-              <h1 className="font-bold text-h1">
+              <h1 className="font-bold text-h1 md:text-h1-dsk">
                   Workout with me
                 </h1>
                 <div className="flex pt-12">
@@ -113,21 +113,21 @@ export default function Home() {
                 <p className="pt-10">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt.
                 </p>
-                <h2 className="pt-16 font-bold text-h2">
+                <h2 className="pt-16 font-bold text-h2 md:text-h2-dsk">
                   address line 1
                 </h2>
-                <h2 className="font-bold text-h2">
+                <h2 className="font-bold text-h2 md:text-h2-dsk">
                   address line 2
                 </h2>
-                <h2 className="font-bold text-h2">
+                <h2 className="font-bold text-h2 md:text-h2-dsk">
                   richmond BC, VXX XXX
                 </h2>
 
-                <h2 className="pt-6 font-bold text-h2">
+                <h2 className="pt-6 font-bold text-h2 md:text-h2-dsk">
                 (XXX)-XXX-XXXX
                 </h2>
 
-                <h2 className="pt-6 font-bold text-h2">
+                <h2 className="pt-6 font-bold text-h2 md:text-h2-dsk">
                   kevinye@email.com
                 </h2>
                 <div className="pt-10">
