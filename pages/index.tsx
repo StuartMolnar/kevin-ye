@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 const ServicesCarousel = dynamic(() => import('@/components/ServicesCarousel'), { ssr: false });
 const ClientStories = dynamic(() => import('@/components/ClientStories'), { ssr: false });
+const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false });
 import Hero from '@/components/Hero';
 import Copyright from '@/components/Copyright';
 
@@ -8,7 +9,7 @@ export default function Home() {
   
   return (
     <div>
-
+      <Navbar />
       <main className="min-h-screen font-normal text-black bg-white font-poppins text-body pt-[135px] md:pt-[185px]">
 
         <Hero />

@@ -1,6 +1,4 @@
 import { Inter } from 'next/font/google'
-import dynamic from 'next/dynamic';
-const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false });
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +14,6 @@ export default function RootLayout({
 }) {
   return (
     <div className={inter.className}>
-      <Navbar />
       {children}
     </div>
   )
