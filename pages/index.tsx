@@ -1,5 +1,6 @@
-import ServicesCarousel from '@/components/ServicesCarousel';
-import ClientStories from '@/components/ClientStories';;
+import dynamic from 'next/dynamic';
+const ServicesCarousel = dynamic(() => import('@/components/ServicesCarousel'), { ssr: false });
+const ClientStories = dynamic(() => import('@/components/ClientStories'), { ssr: false });
 import Hero from '@/components/Hero';
 import Copyright from '@/components/Copyright';
 
