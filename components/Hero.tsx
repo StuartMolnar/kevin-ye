@@ -9,12 +9,12 @@ const Hero = () => {
     };
 
   return (
-    <section id="hero-section" className="relative flex mx-[20px] md:mx-[60px] 3xl:mx-[200px]">
+    <section id="hero-section" className="relative flex mx-[20px] md:mx-[60px] xl:mx-[200px]">
           <div className="z-10 flex flex-col">
             <div>
-              <p className="text-hero md:text-hero-dsk font-heavy">Transformation Coach</p>
-              <p className="text-hero md:text-hero-dsk font-heavy">Personal Trainer</p>
-              <p className="text-hero md:text-hero-dsk font-heavy">Powerlifting Expert</p>
+              <p className="font-bold text-hero md:text-hero-dsk">Transformation Coach</p>
+              <p className="font-bold text-hero md:text-hero-dsk">Personal Trainer</p>
+              <p className="font-bold text-hero md:text-hero-dsk">Powerlifting Expert</p>
             </div>
 
             <div className="flex pt-[18px] md:pt-10">

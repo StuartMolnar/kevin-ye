@@ -17,7 +17,7 @@ type ClientStoryProps = {
           <img src="/hero-bar-gold.svg" alt="" className="w-[73px]  h-[5px]" />
           <img src="/hero-bar-black.svg" alt="" className="w-[73px] h-[5px] ml-1" />
         </div>
-        <div className="mt-[24px] md:mt-[40px] px-2 space-y-5 max-h-[450px] lg:max-h-[10000px] overflow-auto">
+        <div className="mt-[24px] md:mt-[40px] space-y-5 max-h-[450px] lg:max-h-[10000px] overflow-auto">
           {paragraphedDescription}
         </div>
       </div>

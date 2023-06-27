@@ -115,12 +115,12 @@ const ServicesCarousel = () => {
         </div>
       </div>
 
-      <div className='relative flex pt-[40px] md:pt-[90px]'>    
+      <div className='relative flex pt-[40px] mx-auto md:pt-[90px] max-w-[2000px]'>    
         <div className={currentSlide === 0 ? "hidden" : "hidden md:block z-30 absolute left-16 top-1/2 transform -translate-y-1/2"}>
           <CarouselArrow initialSrc="/carousel-arrow-left.svg" hoverSrc="/carousel-arrow-left-hover.svg" onClick={handlePrev}/>
         </div>    
         
-        <Slider {...settings} ref={sliderRef} className="w-[calc(100%-20%)] mx-auto space-x-5 md:w-4/5 service-carousel">
+        <Slider {...settings} ref={sliderRef} className="w-[calc(100%-20%)] mx-auto space-x-5 md:w-4/5 max-w-[1850px] service-carousel">
           {services.map((service, index) => (
               <div key={index} className="">
                   <ServiceCard 

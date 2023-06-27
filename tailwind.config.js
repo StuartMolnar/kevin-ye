@@ -48,6 +48,9 @@ module.exports = {
       colors: {
         gold: '#D5B76E',
       },
+      boxShadow: {
+        'custom': '0px 2px 25px 1px rgba(0, 0, 0, 0.05)'
+      },      
       maxWidth: {
         '112': '28rem', /* 448px */
       },
