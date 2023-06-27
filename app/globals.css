@@ -12,9 +12,19 @@
   right: auto !important;
 }
 
+details > summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display:none;
+}
+
+
 /* targets the services carousel and horizontally aligns the cards within their slider component */
 .service-carousel > .slick-list > .slick-track > .slick-slide {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+

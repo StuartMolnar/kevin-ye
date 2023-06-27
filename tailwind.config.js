@@ -57,6 +57,7 @@ module.exports = {
       animation: {
         'slide-in': 'slide-in 0.5s forwards',
         'slide-out': 'slide-out 0.5s forwards',
+        'slide-down': 'slide-down 0.5s ease-out forwards',
       },
       keyframes: {
         'slide-in': {
@@ -66,6 +67,10 @@ module.exports = {
         'slide-out': {
           '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(100%)' },
+        'slide-down': {
+          '0%': { maxHeight: '0' },
+          '100%': { maxHeight: '500px' }
+        },
         },
       },
     },
