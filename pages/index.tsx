@@ -46,10 +46,6 @@ export default function Home() {
 
         <ServicesCarousel />
 
-        <section id="quiz-section" className="flex">
-          <h2 className="w-full p-32 font-bold text-center text-h2 md:text-h2-dsk">Questionnaire Component Here</h2>
-        </section>
-
         <ClientStories />
 
         {/* mobile footer */}
@@ -89,11 +85,11 @@ export default function Home() {
 
         </section>
 
-      {/* desktop footer */}
+    
       {/* desktop footer */}
       <section id="contact-section" className="hidden pt-20 lg:flex">
 
-        <div className="flex items-center w-3/5"> {/* Added items-center here */}
+        <div className="flex items-center w-3/5">
             <div className="flex flex-col max-w-[500px] mx-[20px] lg:mx-auto">
                 <h1 className="font-bold text-h1 md:text-h1-dsk">
                     Workout with me
@@ -107,7 +103,7 @@ export default function Home() {
                 </p>
                 <div className="mt-20">
             
-                <div className="bg-black text-white inline-block max-w-[190px] px-[30px] py-[15px]">Contact Me Now</div>
+                <div className="bg-black text-white inline-block max-w-[190px] px-[30px] py-[15px] hover:bg-gold hover:text-black">Contact Me Now</div>
                 <h2 className="pt-10 font-bold text-h2">
                     (778)-1234-5678
                 </h2>
