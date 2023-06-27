@@ -11,17 +11,43 @@ const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
 
     const smoothScrollTo = (id: string) => {
+        const scroll = () => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+    
         if (router.pathname === "/") {
-            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+            if (document.readyState === 'complete') {
+                scroll();
+            } else {
+                document.addEventListener('DOMContentLoaded', scroll);
+            }
         } else {
-            router.push(`/#${id}`);
+            router.push(`/`).then(() => {
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        if (mutation.type === 'childList' && document.getElementById(id)) {
+                            scroll();
+                            observer.disconnect();
+                        }
+                    });
+                });
+    
+                observer.observe(document.body, { childList: true, subtree: true });
+            });
         }
     };
-
+    
     const smoothScrollAndCloseMenu = (id: string) => {
         smoothScrollTo(id);
         setOpen(false);
     };
+    
+    
+    
+    
 
     // underlines the navbar link based on currently visible page section
     useEffect(() => {
@@ -62,33 +88,34 @@ const Navbar = () => {
     
 
   return (
-    <section>
-        <div className={`z-40 bg-white fixed top-0 inset-x-0 flex items-center px-[20px] md:px-[60px] xl:px-[200px] transition-all duration-200 ease-in-out ${isScrolled ? 'py-[20px]' : 'py-[35px] md:py-[60px]'}`}>
-            <img onClick={() => smoothScrollAndCloseMenu('hero-section')} src="/kevin-ye-logo-navbar.svg" alt="" className="scale-75 md:scale-100 h-[65px] w-[169px] cursor-pointer mr-8" />
+    <section id="navbar">
+        <div className={`z-50 fixed top-0 inset-x-0 flex items-center px-[20px] md:px-[60px] xl:px-[200px] transition-all duration-200 ease-in-out ${isScrolled ? 'py-[20px]' : 'py-[35px] md:py-[60px]'} ${isOpen ? 'bg-transparent' : 'bg-white'}`}>
+            <img onClick={() => smoothScrollAndCloseMenu('hero-section')} src={`${isOpen ? "/kevin-ye-logo-navbar-black.svg" : "/kevin-ye-logo-navbar.svg"}`} className="scale-75 -ml-[20px] md:-ml-0 md:scale-100 h-[65px] w-[169px] cursor-pointer mr-8" />
             <div className="mx-auto space-x-8 font-medium text-navbar md:text-navbar-dsk">
                 <a onClick={() => smoothScrollTo('about-section')} id="about-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">About</a>
                 <a onClick={() => smoothScrollTo('services-section')} id="services-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">Fitness Programs</a>
-                <a onClick={() => smoothScrollTo('quiz-section')} id="quiz-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">Take a Quiz</a>
+                {/* <a onClick={() => smoothScrollTo('quiz-section')} id="quiz-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">Take a Quiz</a> */}
                 <a onClick={() => smoothScrollTo('client-stories-section')} id="client-stories-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">Client Stories</a>
             </div>
-            <div onClick={() => smoothScrollTo('contact-section')} className="hidden xl:inline-block bg-black text-white py-[15.5px] px-[30px] cursor-pointer rounded-[2.5px] ml-8">Get In Touch</div>
+            <div onClick={() => smoothScrollTo('contact-section')} className="hidden xl:inline-block bg-black text-white py-[15.5px] px-[30px] cursor-pointer rounded-[2.5px] ml-8 hover:bg-gold hover:text-black">Get In Touch</div>
+            <div className={`z-50 scale-75 md:scale-100 xl:hidden transition-all duration-200 ease-in-out`}>
+                <Hamburger toggled={isOpen} toggle={setOpen} />
+            </div>
         </div>
 
 
         {/* mobile navigation menu */}
-        <div className={`w-3/4 min-w-[320px] fixed top-0 bottom-0 right-0 bg-opacity-[1] z-50 flex flex-col items-center justify-center space-y-4 bg-gold text-h3 md:text-h3-dsk transform transition-transform duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className={`w-full fixed top-0 bottom-0 right-0 bg-opacity-[1] z-40 flex flex-col items-center justify-center space-y-4 bg-gold text-h3 md:text-h3-dsk transform transition-transform duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
             <a onClick={() => smoothScrollAndCloseMenu('about-section')} className="cursor-pointer hover:font-bold">About</a>
             <a onClick={() => smoothScrollAndCloseMenu('services-section')} className="cursor-pointer hover:font-bold">Fitness Programs</a>
-            <a onClick={() => smoothScrollAndCloseMenu('quiz-section')} className="cursor-pointer hover:font-bold">Take a Quiz</a>
+            {/* <a onClick={() => smoothScrollAndCloseMenu('quiz-section')} className="cursor-pointer hover:font-bold">Take a Quiz</a> */}
             <a onClick={() => smoothScrollAndCloseMenu('client-stories-section')} className="cursor-pointer hover:font-bold">Client Stories</a>
             <a onClick={() => smoothScrollAndCloseMenu('contact-section')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</a>
         </div>
         
         
 
-        <div className={`z-50 scale-75 md:scale-100 fixed xl:hidden right-[30px] md:right-[60px] transition-all duration-200 ease-in-out ${isScrolled ? 'py-[28px]' : 'py-[42px] md:py-[70px]'}`}>
-            <Hamburger toggled={isOpen} toggle={setOpen} />
-        </div>
+
     </section>
 
     
