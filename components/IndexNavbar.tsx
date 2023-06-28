@@ -1,41 +1,24 @@
 'use client';
 import Hamburger from 'hamburger-react'
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 
 const Navbar = () => {
-    const router = useRouter();
     const [isScrolled, setIsScrolled] = useState(false);
     const [sections, setSections] = useState<HTMLElement[]>([]);
     const [activeSection, setActiveSection] = useState('');
     const [isOpen, setOpen] = useState(false);
 
     const smoothScrollTo = (id: string) => {
-        const scroll = () => {
-            const element = document.getElementById(id);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        };
+        const navbarHeight = 104; // adjust this value if the navbar's height changes (navbar height - 1)
+        const element = document.getElementById(id);
     
-        if (router.pathname === "/") {
-            if (document.readyState === 'complete') {
-                scroll();
-            } else {
-                document.addEventListener('DOMContentLoaded', scroll);
-            }
-        } else {
-            router.push(`/`).then(() => {
-                const observer = new MutationObserver((mutations) => {
-                    mutations.forEach((mutation) => {
-                        if (mutation.type === 'childList' && document.getElementById(id)) {
-                            scroll();
-                            observer.disconnect();
-                        }
-                    });
-                });
-    
-                observer.observe(document.body, { childList: true, subtree: true });
+        if (element) {
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - navbarHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
             });
         }
     };
@@ -97,7 +80,7 @@ const Navbar = () => {
                 {/* <a onClick={() => smoothScrollTo('quiz-section')} id="quiz-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">Take a Quiz</a> */}
                 <a onClick={() => smoothScrollTo('client-stories-section')} id="client-stories-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">Client Stories</a>
             </div>
-            <div onClick={() => smoothScrollTo('contact-section')} className="hidden xl:inline-block bg-black text-white py-[15.5px] px-[30px] cursor-pointer rounded-[2.5px] ml-8 hover:bg-gold hover:text-black">Get In Touch</div>
+            <div onClick={() => smoothScrollTo('contact-section-dsk')} className="hidden xl:inline-block bg-black text-white py-[15.5px] px-[30px] cursor-pointer rounded-[2.5px] ml-8 hover:bg-gold hover:text-black">Get In Touch</div>
             <div className={`z-50 scale-75 md:scale-100 xl:hidden transition-all duration-200 ease-in-out`}>
                 <Hamburger toggled={isOpen} toggle={setOpen} />
             </div>
@@ -106,11 +89,11 @@ const Navbar = () => {
 
         {/* mobile navigation menu */}
         <div className={`w-full fixed top-0 bottom-0 right-0 bg-opacity-[1] z-40 flex flex-col items-center justify-center space-y-4 bg-gold text-h3 md:text-h3-dsk transform transition-transform duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
-            <a onClick={() => smoothScrollAndCloseMenu('about-section')} className="cursor-pointer hover:font-bold">About</a>
-            <a onClick={() => smoothScrollAndCloseMenu('services-section')} className="cursor-pointer hover:font-bold">Fitness Programs</a>
+            <a onClick={() => smoothScrollAndCloseMenu('about-section')} className="cursor-pointer">About</a>
+            <a onClick={() => smoothScrollAndCloseMenu('services-section')} className="cursor-pointer">Fitness Programs</a>
             {/* <a onClick={() => smoothScrollAndCloseMenu('quiz-section')} className="cursor-pointer hover:font-bold">Take a Quiz</a> */}
-            <a onClick={() => smoothScrollAndCloseMenu('client-stories-section')} className="cursor-pointer hover:font-bold">Client Stories</a>
-            <a onClick={() => smoothScrollAndCloseMenu('contact-section')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</a>
+            <a onClick={() => smoothScrollAndCloseMenu('client-stories-section')} className="cursor-pointer">Client Stories</a>
+            <a onClick={() => smoothScrollAndCloseMenu('contact-section-mobile')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</a>
         </div>
         
         

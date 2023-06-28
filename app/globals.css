@@ -28,3 +28,14 @@ details summary::-webkit-details-marker {
     justify-content: center;
 }
 
+.triangle-down {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor;
+}
+
+.triangle-up {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid currentColor;
+}

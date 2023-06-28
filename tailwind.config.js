@@ -38,6 +38,7 @@ module.exports = {
         'h2': '25px',
         'h3': '20px',
         'header-sub': '16px',
+        'copyright': '13px',
       },
       fontWeight: {
         'normal': 400,

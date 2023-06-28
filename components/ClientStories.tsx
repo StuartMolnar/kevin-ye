@@ -40,28 +40,8 @@ const ClientStories = () => {
     sliderRef.current?.slickNext();
   };
 
-  /* ----- Arrow Hover Effect ----- */
-  const [leftArrowSrc, setLeftArrowSrc] = useState("/carousel-arrow-left.svg");
-  const [rightArrowSrc, setRightArrowSrc] = useState("/carousel-arrow-right.svg");
-
-  const handleMouseEnterLeft = () => {
-    setLeftArrowSrc("/carousel-arrow-left-hover.svg");
-  };
-
-  const handleMouseLeaveLeft = () => {
-    setLeftArrowSrc("/carousel-arrow-left.svg");
-  };
-
-  const handleMouseEnterRight = () => {
-    setRightArrowSrc("/carousel-arrow-right-hover.svg");
-  };
-
-  const handleMouseLeaveRight = () => {
-    setRightArrowSrc("/carousel-arrow-right.svg");
-  };
-
   return (
-    <section id="client-stories-section" className="grid grid-cols-1 lg:grid-cols-2">
+    <section id="client-stories-section" className="grid grid-cols-1 lg:grid-cols-2 mt-16 md:mt-[170px]">
       <div className="hidden lg:block relative bg-gold h-[900px] col-span-1">
           <div className="absolute right-0 w-[15%] h-full bg-white"></div>
           <img src="/client-story-image.jpg" alt="" className="absolute w-[80%] top-1/2 transform -translate-y-1/2 -right-0 h-[500px] object-cover"/>
@@ -98,5 +78,3 @@ const ClientStories = () => {
 };
 
 export default ClientStories;
-
-// {services.map((service, index) => (<ServiceCard title={service.title} imageUrl={service.imageUrl} description={service.description} func={service.func} />}

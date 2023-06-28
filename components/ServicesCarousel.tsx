@@ -104,7 +104,7 @@ const ServicesCarousel = () => {
 
   return (
     <section id="services-section" >
-      <div className='relative flex flex-col items-center justify-center pt-10 md:pt-[118px]'>
+      <div className='relative flex flex-col items-center justify-center mt-10 md:mt-[118px]'>
         <div className="flex flex-col px-5 text-center">
             <h1 className="font-bold text-h1 md:text-h1-dsk">
                 Ready to make a change?

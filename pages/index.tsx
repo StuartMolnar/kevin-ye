@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 const ServicesCarousel = dynamic(() => import('@/components/ServicesCarousel'), { ssr: false });
 const ClientStories = dynamic(() => import('@/components/ClientStories'), { ssr: false });
-const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false });
+const Navbar = dynamic(() => import('@/components/IndexNavbar'), { ssr: false });
 import Hero from '@/components/Hero';
 import Copyright from '@/components/Copyright';
 
@@ -14,7 +14,7 @@ export default function Home() {
 
         <Hero />
 
-        <section id="about-section" className="flex flex-col pt-16 md:pt-32 md:flex-row">
+        <section id="about-section" className="flex flex-col mt-16 md:mt-32 md:flex-row">
             <div className='md:w-1/2'>
               <img src="/about-image.jpg" alt="" className='object-cover w-full h-[400px] md:h-[600px] xl:h-[634px] transition-all duration-200 ease-in-out'/>
             </div>
@@ -49,7 +49,7 @@ export default function Home() {
         <ClientStories />
 
         {/* mobile footer */}
-        <section id="contact-section" className="flex pt-16 lg:hidden">
+        <section id="contact-section-mobile" className="flex pt-16 lg:hidden">
           
           <div className="flex flex-col">
             
@@ -87,7 +87,7 @@ export default function Home() {
 
     
       {/* desktop footer */}
-      <section id="contact-section" className="hidden pt-20 lg:flex">
+      <section id="contact-section-dsk" className="hidden pt-20 lg:flex">
 
         <div className="flex items-center w-3/5">
             <div className="flex flex-col max-w-[500px] mx-[20px] lg:mx-auto">

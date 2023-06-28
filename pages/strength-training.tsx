@@ -1,4 +1,4 @@
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/ServicesNavbar';
 import Copyright from '@/components/Copyright';
 import ProgramHighlights from '@/components/ProgramHighlights';
 import React from 'react';
@@ -109,7 +109,7 @@ export default function StrengthTraining() {
             </div>
 
             
-            <div className="mt-20">
+            <div id="contact-section" className="mt-20">
               
               <div className="bg-black text-white inline-block w-full px-[30px] py-[15px] text-center cursor-pointer">Contact Me Now</div>
               <h2 className="pt-10 font-bold text-h2 md:text-h2-dsk">
