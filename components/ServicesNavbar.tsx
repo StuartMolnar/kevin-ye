@@ -65,11 +65,11 @@ const Navbar = () => {
             <img onClick={() => smoothScrollAndCloseMenu('hero-section')} src={`${isOpen ? "/kevin-ye-logo-navbar-black.svg" : "/kevin-ye-logo-navbar.svg"}`} className="scale-75 -ml-[20px] md:-ml-0 md:scale-100 h-[65px] w-[169px] cursor-pointer mr-8" />
             <div className="flex mx-auto font-medium text-navbar md:text-navbar-dsk">
                 <Link href="/">
-                    <p className="hidden px-4 py-2 cursor-pointer xl:inline-block hover:text-white hover:bg-gold rounded-[2.5px]">Home</p>
+                    <p className="hidden p-3 px-5 cursor-pointer xl:inline-block hover:text-white hover:bg-gold rounded-[2.5px]">Home</p>
                 </Link>
                 <div className="hidden xl:block" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
-                    <div ref={moreServicesRef} className={`${isDropdownOpen ? "text-white bg-gold" : ""} flex items-center rounded-[2.5px]`}>
-                        <div className="px-4 py-2 select-none">Services</div>
+                    <div ref={moreServicesRef} className={`${isDropdownOpen ? "text-white bg-gold" : ""} flex items-center rounded-[2.5px] p-3 px-5 space-x-4`}>
+                        <div className="select-none">Fitness Programs</div>
                         <span className="w-0 h-0 mr-2 triangle-down" />
                     </div>
                     <Dropdown 
@@ -93,7 +93,7 @@ const Navbar = () => {
             <details className="cursor-pointer" open={isServicesOpen} onToggle={() => setServicesOpen(!isServicesOpen)}>
                 <summary className="mb-1 outline-none">
                     <div className="flex items-center">
-                        <p>Services</p>
+                        <p>Fitness Programs</p>
                         <span className={isServicesOpen ? "w-0 h-0 ml-2 triangle-up" : "w-0 h-0 ml-2 triangle-down"} />
                     </div>
                 </summary>

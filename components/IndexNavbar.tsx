@@ -74,11 +74,10 @@ const Navbar = () => {
     <section id="navbar">
         <div className={`z-50 fixed top-0 inset-x-0 flex items-center px-[20px] md:px-[60px] xl:px-[200px] transition-all duration-200 ease-in-out ${isScrolled ? 'py-[20px]' : 'py-[35px] md:py-[60px]'} ${isOpen ? 'bg-transparent' : 'bg-white'}`}>
             <img onClick={() => smoothScrollAndCloseMenu('hero-section')} src={`${isOpen ? "/kevin-ye-logo-navbar-black.svg" : "/kevin-ye-logo-navbar.svg"}`} className="scale-75 -ml-[20px] md:-ml-0 md:scale-100 h-[65px] w-[169px] cursor-pointer mr-8" />
-            <div className="mx-auto space-x-8 font-medium text-navbar md:text-navbar-dsk">
-                <a onClick={() => smoothScrollTo('about-section')} id="about-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">About</a>
-                <a onClick={() => smoothScrollTo('services-section')} id="services-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">Fitness Programs</a>
-                {/* <a onClick={() => smoothScrollTo('quiz-section')} id="quiz-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">Take a Quiz</a> */}
-                <a onClick={() => smoothScrollTo('client-stories-section')} id="client-stories-section-link" className="hidden cursor-pointer xl:inline-block hover:underline">Client Stories</a>
+            <div className="mx-auto font-medium text-navbar md:text-navbar-dsk">
+                <a onClick={() => smoothScrollTo('about-section')} id="about-section-link" className="hidden cursor-pointer xl:inline-block hover:bg-gold hover:text-white p-3 px-6 rounded-[2.5px]">About</a>
+                <a onClick={() => smoothScrollTo('services-section')} id="services-section-link" className="hidden cursor-pointer xl:inline-block hover:bg-gold hover:text-white p-3 px-6 rounded-[2.5px]">Fitness Programs</a>
+                <a onClick={() => smoothScrollTo('client-stories-section')} id="client-stories-section-link" className="hidden cursor-pointer xl:inline-block hover:bg-gold hover:text-white p-3 px-6 rounded-[2.5px]">Client Stories</a>
             </div>
             <div onClick={() => smoothScrollTo('contact-section-dsk')} className="hidden xl:inline-block bg-black text-white py-[15.5px] px-[30px] cursor-pointer rounded-[2.5px] ml-8 hover:bg-gold hover:text-black">Get In Touch</div>
             <div className={`z-50 scale-75 md:scale-100 xl:hidden transition-all duration-200 ease-in-out`}>
@@ -91,7 +90,6 @@ const Navbar = () => {
         <div className={`w-full fixed top-0 bottom-0 right-0 bg-opacity-[1] z-40 flex flex-col items-center justify-center space-y-4 bg-gold text-h3 md:text-h3-dsk transform transition-transform duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
             <a onClick={() => smoothScrollAndCloseMenu('about-section')} className="cursor-pointer">About</a>
             <a onClick={() => smoothScrollAndCloseMenu('services-section')} className="cursor-pointer">Fitness Programs</a>
-            {/* <a onClick={() => smoothScrollAndCloseMenu('quiz-section')} className="cursor-pointer hover:font-bold">Take a Quiz</a> */}
             <a onClick={() => smoothScrollAndCloseMenu('client-stories-section')} className="cursor-pointer">Client Stories</a>
             <a onClick={() => smoothScrollAndCloseMenu('contact-section-mobile')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</a>
         </div>
