@@ -11,10 +11,9 @@ interface DropdownProps {
 const Dropdown: React.FC<DropdownProps> = ({ isOpen, width }) => {
     return (
         <div style={{width}} className={`absolute bg-white pt-1 cursor-pointer rounded-[2.5px] ${isOpen ? 'block' : 'hidden'}`}>
-            <a href="#" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Link 1</a>
-            <a href="#" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Link 2</a>
-            <a href="#" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Link 3</a>
-            <a href="#" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Link 4</a>
+            <a href="/strength-training" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Strength Training</a>
+            <a href="/conditional-training" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Conditional Training</a>
+            <a href="/weight-loss" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Weight Loss</a>
         </div>
     );
 }
@@ -62,7 +61,9 @@ const Navbar = () => {
   return (
     <section id="navbar">
         <div className={`z-50 fixed top-0 inset-x-0 flex items-center px-[20px] md:px-[60px] xl:px-[200px] transition-all duration-200 ease-in-out ${isScrolled ? 'py-[20px]' : 'py-[35px] md:py-[60px]'} ${isOpen ? 'bg-transparent' : 'bg-white'}`}>
-            <img onClick={() => smoothScrollAndCloseMenu('hero-section')} src={`${isOpen ? "/kevin-ye-logo-navbar-black.svg" : "/kevin-ye-logo-navbar.svg"}`} className="scale-75 -ml-[20px] md:-ml-0 md:scale-100 h-[65px] w-[169px] cursor-pointer mr-8" />
+            <Link href="/">
+                <img onClick={() => smoothScrollAndCloseMenu('hero-section')} src={`${isOpen ? "/kevin-ye-logo-navbar-black.svg" : "/kevin-ye-logo-navbar.svg"}`} className="scale-75 -ml-[20px] md:-ml-0 md:scale-100 h-[65px] w-[169px] cursor-pointer mr-8" />
+            </Link>
             <div className="flex mx-auto font-medium text-navbar md:text-navbar-dsk">
                 <Link href="/">
                     <p className="hidden p-3 px-5 cursor-pointer xl:inline-block hover:text-white hover:bg-gold rounded-[2.5px]">Home</p>
@@ -97,10 +98,9 @@ const Navbar = () => {
                         <span className={isServicesOpen ? "w-0 h-0 ml-2 triangle-up" : "w-0 h-0 ml-2 triangle-down"} />
                     </div>
                 </summary>
-                <a href="#" className="block px-4 py-2 scale-[80%] hover:font-bold text-shadow">Link 1</a>
-                <a href="#" className="block px-4 py-2 scale-[80%] hover:font-bold text-shadow">Link 2</a>
-                <a href="#" className="block px-4 py-2 scale-[80%] hover:font-bold text-shadow">Link 3</a>
-                <a href="#" className="block px-4 py-2 scale-[80%] hover:font-bold text-shadow">Link 4</a>
+                <a href="/strength-training" className="block px-4 py-2 scale-[80%] hover:font-bold text-shadow">Strength Training</a>
+                <a href="/conditional-training" className="block px-4 py-2 scale-[80%] hover:font-bold text-shadow">Conditional Training</a>
+                <a href="/weight-loss" className="block px-4 py-2 scale-[80%] hover:font-bold text-shadow">Weight Loss</a>
             </details>
             <a onClick={() => smoothScrollAndCloseMenu('contact-section')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</a>
         </div>
