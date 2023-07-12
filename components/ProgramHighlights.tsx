@@ -54,7 +54,7 @@ const ProgramHighlights = ({ items }: ProgramHighlightProps) => {
           <p className="pt-[24px]">
             Join my program and embark on a journey towards a stronger, healthier, and more confident you.
           </p>
-          <div className="inline-block font-medium border-black border rounded-[2.5px] py-[15px] px-[30px] max-w-[160px] cursor-pointer mt-[30px]">
+          <div className="inline-block font-medium border-black border rounded-[2.5px] py-[15px] px-[30px] max-w-[160px] cursor-pointer mt-[30px] hover:text-white hover:bg-black">
             Get In Touch
           </div>
         </div>

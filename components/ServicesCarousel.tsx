@@ -17,19 +17,13 @@ const services = [
       title: 'Conditional Training',
       imageUrl: '/conditional-training.jpg',
       description: 'My conditioning training program is tailored to help individuals of all fitness levels improve their overall fitness, enhance athletic performance, and boost endurance. With personalized plans targeting cardiovascular endurance, strength, agility, and flexibility, my dynamic workouts and expert coaching will guide you towards achieving your conditioning goals.',
-      link: '#'
+      link: '/conditional-training'
     },
     {
-      title: 'Placeholder1',
+      title: 'Weight Loss',
       imageUrl: '/placeholder.jpg',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt scelerisque. Suspendisse potenti. Sed sed porttitor lacus. Nunc et ante id purus maximus rhoncus. ',
-      link: '#' 
-    },
-    {
-      title: 'Placeholder2',
-      imageUrl: '/placeholder.jpg',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt scelerisque. Suspendisse potenti. Sed sed porttitor lacus. Nunc et ante id purus maximus rhoncus. ',
-      link: '#'
+      description: 'My weight loss program is designed to help individuals like you shed unwanted body fat and achieve sustainable, long-term results. Unlike quick-fix solutions and fad diets, my comprehensive program focuses on creating healthy habits, adopting a balanced approach to nutrition, and incorporating effective exercise strategies. Whether your goal is to improve overall health or enhance your physical appearance, my program offers the tools and support needed to reach your fat loss goals.',
+      link: '/weight-loss' 
     },
 ];
 
