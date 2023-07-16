@@ -99,9 +99,9 @@ const Navbar = () => {
                             <span className={isServicesOpen ? "w-0 h-0 ml-2 triangle-up" : "w-0 h-0 ml-2 triangle-down"} />
                         </div>
                     </summary>
-                    <a href="/strength-training" className="block py-2 scale-[80%] text-shadow">Strength Training</a>
-                    <a href="/conditional-training" className="block py-2 scale-[80%] text-shadow">Conditional Training</a>
-                    <a href="/weight-loss" className="block py-2 scale-[80%] text-shadow">Weight Loss</a>
+                    <Link href="/strength-training" className="block py-2 scale-[80%] text-shadow">Strength Training</Link>
+                    <Link href="/conditional-training" className="block py-2 scale-[80%] text-shadow">Conditional Training</Link>
+                    <Link href="/weight-loss" className="block py-2 scale-[80%] text-shadow">Weight Loss</Link>
                 </details>
                 <a onClick={() => smoothScrollAndCloseMenu('contact-section')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</a>
             </div>
