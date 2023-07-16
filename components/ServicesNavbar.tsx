@@ -87,26 +87,26 @@ const Navbar = () => {
 
 
         {/* mobile navigation menu */}
-        <div className={`w-full fixed top-0 bottom-0 right-0 bg-opacity-[1] z-40 flex flex-col items-center justify-center space-y-4 bg-gold text-h3 md:text-h3-dsk transform transition-transform duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
-            <Link href="/">
-                <p className="cursor-pointer">Home</p>
-            </Link>
-            <details className="cursor-pointer" open={isServicesOpen} onToggle={() => setServicesOpen(!isServicesOpen)}>
-                <summary className="mb-1 outline-none">
-                    <div className="flex items-center">
-                        <p>Fitness Programs</p>
-                        <span className={isServicesOpen ? "w-0 h-0 ml-2 triangle-up" : "w-0 h-0 ml-2 triangle-down"} />
-                    </div>
-                </summary>
-                <a href="/strength-training" className="block px-4 py-2 scale-[80%] hover:font-bold text-shadow">Strength Training</a>
-                <a href="/conditional-training" className="block px-4 py-2 scale-[80%] hover:font-bold text-shadow">Conditional Training</a>
-                <a href="/weight-loss" className="block px-4 py-2 scale-[80%] hover:font-bold text-shadow">Weight Loss</a>
-            </details>
-            <a onClick={() => smoothScrollAndCloseMenu('contact-section')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</a>
+        <div className={`select-none w-full h-full fixed top-0 right-0 bg-opacity-[1] z-40 bg-gold text-h3 md:text-h3-dsk transform transition-transform duration-300 ${isOpen ? 'translate-y-0' : '-translate-y-full'} flex flex-col items-center pt-[35vh]`}>
+            <div className="space-y-4 w-[190px] md:w-[240px]">
+                <Link href="/">
+                    <p className="cursor-pointer">Home</p>
+                </Link>
+                <details className="cursor-pointer" open={isServicesOpen} onToggle={() => setServicesOpen(!isServicesOpen)}>
+                    <summary className="mb-1 outline-none">
+                        <div className="flex items-center">
+                            <p>Fitness Programs</p>
+                            <span className={isServicesOpen ? "w-0 h-0 ml-2 triangle-up" : "w-0 h-0 ml-2 triangle-down"} />
+                        </div>
+                    </summary>
+                    <a href="/strength-training" className="block py-2 scale-[80%] text-shadow">Strength Training</a>
+                    <a href="/conditional-training" className="block py-2 scale-[80%] text-shadow">Conditional Training</a>
+                    <a href="/weight-loss" className="block py-2 scale-[80%] text-shadow">Weight Loss</a>
+                </details>
+                <a onClick={() => smoothScrollAndCloseMenu('contact-section')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</a>
+            </div>
         </div>
 
-        
-        
 
 
     </section>
