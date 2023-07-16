@@ -13,7 +13,8 @@ module.exports = {
     extend: {
       screens: {
         'customHeroLogo': '1650px',
-        'xl': '1350px'
+        'xl': '1350px',
+        'super-sm': '350px',
       },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
