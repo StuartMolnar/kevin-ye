@@ -69,6 +69,7 @@ const Navbar = () => {
         document.getElementById(`${activeSection}-link`)?.classList.add('underline');
     }, [activeSection]);
     
+    
 
   return (
     <section id="navbar">
