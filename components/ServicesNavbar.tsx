@@ -11,9 +11,9 @@ interface DropdownProps {
 const Dropdown: React.FC<DropdownProps> = ({ isOpen, width }) => {
     return (
         <div style={{width}} className={`absolute bg-white pt-1 cursor-pointer rounded-[2.5px] ${isOpen ? 'block' : 'hidden'}`}>
-            <a href="/strength-training" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Strength Training</a>
-            <a href="/conditional-training" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Conditional Training</a>
-            <a href="/weight-loss" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Weight Loss</a>
+            <Link href="/strength-training" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Strength Training</Link>
+            <Link href="/conditional-training" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Conditional Training</Link>
+            <Link href="/weight-loss" className="block px-4 py-2 rounded-[2.5px] hover:text-white hover:bg-gold">Weight Loss</Link>
         </div>
     );
 }
