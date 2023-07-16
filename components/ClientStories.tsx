@@ -27,8 +27,8 @@ const ClientStories = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <div></div>,
-    prevArrow: <div></div>,
+    nextArrow: <div style={{display: "none"}} />,
+    prevArrow: <div style={{display: "none"}} />,
   };
 
   const handlePrev = () => {
