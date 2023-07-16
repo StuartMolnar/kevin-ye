@@ -69,7 +69,7 @@ export default function StrengthTraining() {
           <div className="flex flex-col items-center w-full pt-20 md:w-1/2 md:pt-0">
             <div className="p-10 shadow-custom">
               <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
-                STRENGTH TRAINING PROGRAM
+              CONDITIONAL TRAINING PROGRAM
               </p>
               <h3 className="text-h3 md:text-h3-dsk font-medium pt-[18px]">
                 12-Week Package
@@ -89,7 +89,7 @@ export default function StrengthTraining() {
             </div>
             <div className="p-10 mt-10 shadow-custom">
               <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
-                STRENGTH TRAINING PROGRAM
+                CONDITIONAL TRAINING PROGRAM
               </p>
               <h3 className="text-h3 font-medium pt-[18px]">
                 16-Week Package
