@@ -8,18 +8,18 @@ import Copyright from '@/components/Copyright';
 export default function Home() {
   
   return (
-    <div>
+    <div id="screen-top">
       <Navbar />
       <main className="min-h-screen font-normal text-black bg-white font-poppins text-body pt-[135px] md:pt-[185px]">
 
         <Hero />
 
-        <section id="about-section" className="flex flex-col mt-16 md:mt-32 md:flex-row">
+        <section className="flex flex-col mt-16 md:mt-32 md:flex-row">
             <div className='md:w-1/2'>
               <img src="/about-image.jpg" alt="" className='object-cover w-full h-[400px] md:h-[600px] xl:h-[634px] transition-all duration-200 ease-in-out'/>
             </div>
 
-            <div className="flex flex-col justify-center md:w-1/2 ml-0 md:m-[60px] xl:m-[130px] pt-[40px] px-[20px] md:px-0 md:pt-0 transition-all duration-200 ease-in-out">
+            <div id="about-section" className="flex flex-col justify-center md:w-1/2 ml-0 md:m-[60px] xl:m-[130px] pt-[40px] px-[20px] md:px-0 md:pt-0 transition-all duration-200 ease-in-out">
               <h1 className="font-bold text-h1 md:text-h1-dsk">
                 About Kevin Ye
               </h1>
@@ -49,7 +49,7 @@ export default function Home() {
         <ClientStories />
 
         {/* mobile footer */}
-        <section id="contact-section-mobile" className="flex pt-16 lg:hidden">
+        <section className="flex pt-16 lg:hidden">
           
           <div className="flex flex-col">
             
@@ -57,7 +57,7 @@ export default function Home() {
             <img src="/footer-image.jpg" alt="" className="object-cover w-screen"/>
 
 
-            <div className="flex flex-col pt-10 mx-[20px] h-full">
+            <div id="contact-section-mobile" className="flex flex-col pt-10 mx-[20px] h-full">
               <h1 className="font-bold text-h1 md:text-h1-dsk">
                   Workout with me
                 </h1>
