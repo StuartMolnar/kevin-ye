@@ -40,7 +40,7 @@ const ClientStories = () => {
   };
 
   return (
-    <section id="client-stories-section" className="grid grid-cols-1 lg:grid-cols-2 mt-16 md:mt-[170px]">
+    <section className="grid grid-cols-1 lg:grid-cols-2 mt-16 md:mt-[170px]">
       <div className="hidden lg:block relative bg-gold h-[900px] col-span-1">
           <div className="absolute right-0 w-[15%] h-full bg-white"></div>
           <img src="/client-story-image.jpg" alt="" className="absolute w-[80%] top-1/2 transform -translate-y-1/2 -right-0 h-[500px] object-cover"/>
@@ -52,7 +52,7 @@ const ClientStories = () => {
         <img src="/client-story-image.jpg" alt="" className="absolute max-w-[80vw] left-1/2 transform -translate-x-1/2 bottom-0 h-[300px] md:h-[500px] object-cover"/>
       </div>
 
-      <div className="flex flex-col col-span-1">
+      <div id="client-stories-section" className="flex flex-col col-span-1">
       
           
           <Slider {...settings} ref={sliderRef} className="w-4/5 mx-auto pt-[40px] md:pt-[80px] lg:pt-[114px]">
