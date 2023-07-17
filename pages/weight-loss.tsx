@@ -49,9 +49,9 @@ export default function StrengthTraining() {
                   <img src="/about-bar-black.svg" alt="" className="w-24 h-3 -ml-1" />
               </div>
               <p className="pt-10">
-              My weight loss program is designed to help individuals like you shed unwanted body fat and achieve sustainable, long-term results. Unlike quick-fix solutions and fad diets, my comprehensive program focuses on creating healthy habits, adopting a balanced approach to nutrition, and incorporating effective exercise strategies. Whether your goal is to improve overall health or enhance your physical appearance, my program offers the tools and support needed to reach your fat loss goals.
+                My weight loss program is designed to help individuals like you shed unwanted body fat and achieve sustainable, long-term results. Unlike quick-fix solutions and fad diets, my comprehensive program focuses on creating healthy habits, adopting a balanced approach to nutrition, and incorporating effective exercise strategies. Whether your goal is to improve overall health or enhance your physical appearance, my program offers the tools and support needed to reach your fat loss goals.
               </p>
-              <div onClick={() => smoothScrollTo('program-highlights-section')} className="border border-black font-medium rounded-[2.5px] py-[15px] px-[30px] w-[150px] text-center mt-10 cursor-pointer hover:bg-black hover:text-white">Read More</div>
+              <div onClick={() => smoothScrollTo('program-highlights-section')} className="hidden md:block border border-black font-medium rounded-[2.5px] py-[15px] px-[30px] w-[150px] text-center mt-10 cursor-pointer hover:bg-black hover:text-white">Read More</div>
             </div>
             
           </div>
