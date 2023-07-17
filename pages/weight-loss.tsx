@@ -65,7 +65,7 @@ export default function StrengthTraining() {
         <section className="flex flex-col md:flex-row pt-[80px] md:pt-[180px] pb-10 justify-center">
         <img src="/services/pricing-image.jpg" alt="" className="md:hidden object-cover max-h-[1200px]" />
           <div className="flex flex-col items-center w-full pt-20 md:w-1/2 md:pt-0">
-            <div className="p-10 shadow-custom">
+            <div className="p-10 mx-5 shadow-custom">
               <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
                 WEIGHT LOSS PROGRAM
               </p>
@@ -76,8 +76,8 @@ export default function StrengthTraining() {
                 <span className="font-bold text-h3 md:text-h3-dsk">$600</span> per package
               </p>
               <div className="flex pt-[30px]">
-                <img src="/services/program-bar-gold.svg" alt="" className="w-[160px] h-3" />
-                <img src="/services/program-bar-black.svg" alt="" className="w-[160px] h-3" />
+                <img src="/services/program-bar-gold.svg" alt="" className="scale-50 super-sm:scale-75 lg:scale-100 -ml-10 super-sm:-ml-5 lg:-ml-0 w-[160px] h-3" />
+                <img src="/services/program-bar-black.svg" alt="" className="scale-50 super-sm:scale-75 lg:scale-100 -ml-20 super-sm:-ml-10 lg:-ml-0 w-[160px] h-3" />
               </div>
               <ul className="list-disc list-inside pt-[30px]">
                 <li>Description line goes here</li>
@@ -85,7 +85,7 @@ export default function StrengthTraining() {
                 <li>Description line goes here</li>
               </ul>
             </div>
-            <div className="p-10 mt-10 shadow-custom">
+            <div className="p-10 mx-5 mt-10 shadow-custom">
               <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
                 WEIGHT LOSS PROGRAM
               </p>
@@ -96,8 +96,8 @@ export default function StrengthTraining() {
                 <span className="font-bold text-h3 md:text-h3-dsk">$720</span> per package
               </p>
               <div className="flex pt-[30px]">
-                <img src="/services/program-bar-gold.svg" alt="" className="w-[160px] h-3" />
-                <img src="/services/program-bar-black.svg" alt="" className="w-[160px] h-3" />
+                <img src="/services/program-bar-gold.svg" alt="" className="scale-50 super-sm:scale-75 lg:scale-100 -ml-10 super-sm:-ml-5 lg:-ml-0 w-[160px] h-3" />
+                <img src="/services/program-bar-black.svg" alt="" className="scale-50 super-sm:scale-75 lg:scale-100 -ml-20 super-sm:-ml-10 lg:-ml-0 w-[160px] h-3" />
               </div>
               <ul className="list-disc list-inside pt-[30px]">
                 <li>Description line goes here</li>
