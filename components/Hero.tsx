@@ -1,4 +1,5 @@
 import React, { } from 'react';
+import Image from 'next/image';
 
 const Hero = () => {
     
@@ -47,7 +48,13 @@ const Hero = () => {
           </div>
 
           <div className="absolute hidden xl:block right-0 customHeroLogo:left-[50%] transition-all duration-200 ease-in-out">
-            <img src="/kevin-ye-logo-hero.svg" alt="" className="min-w-[622px] min-h-[632px]"/>
+            <Image 
+              src="/kevin-ye-logo-hero.svg" 
+              alt=""
+              layout="intrinsic"
+              width={622}
+              height={632}
+            />
           </div>
         </section>
 

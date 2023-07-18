@@ -4,9 +4,24 @@ const ClientStories = dynamic(() => import('@/components/ClientStories'), { ssr:
 const Navbar = dynamic(() => import('@/components/IndexNavbar'), { ssr: false });
 import Hero from '@/components/Hero';
 import Copyright from '@/components/Copyright';
+import Image from 'next/image';
+import { useRef, useEffect, useState } from 'react';
 
 export default function Home() {
-  
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    if (containerRef.current) {
+        setDimensions({
+            width: containerRef.current.offsetWidth,
+            height: containerRef.current.offsetHeight
+        });
+    }
+  }, []);
+
   return (
     <div id="screen-top">
       <Navbar />
@@ -15,11 +30,16 @@ export default function Home() {
         <Hero />
 
         <section className="flex flex-col mt-16 md:mt-32 md:flex-row">
-            <div className='md:w-1/2'>
-              <img src="/about-image.jpg" alt="" className='object-cover w-full h-[400px] md:h-[600px] xl:h-[634px] transition-all duration-200 ease-in-out'/>
+          <div ref={containerRef} className='md:w-1/2 h-[400px] md:h-[600px] xl:h-[634px] relative'>
+                <Image
+                    src="/about-image.jpg"
+                    alt=""
+                    fill
+                    style={{ objectFit: 'cover' }}
+                />
             </div>
 
-            <div id="about-section" className="flex flex-col justify-center md:w-1/2 ml-0 md:m-[60px] xl:m-[130px] pt-[40px] px-[20px] md:px-0 md:pt-0 transition-all duration-200 ease-in-out">
+            <div id="about-section" className="flex flex-col justify-center md:w-1/2 ml-0 md:p-[60px] xl:p-[130px] pt-[40px] px-[20px] transition-all duration-200 ease-in-out">
               <h1 className="font-bold text-h1 md:text-h1-dsk">
                 About Kevin Ye
               </h1>
@@ -54,7 +74,15 @@ export default function Home() {
           <div className="flex flex-col">
             
 
-            <img src="/footer-image.jpg" alt="" className="object-cover w-screen"/>
+          <Image 
+            src="/footer-image.jpg" 
+            alt="Footer" 
+            width={720} 
+            height={900} 
+            layout="responsive"
+            objectFit="cover"
+            className="w-screen"
+          />
 
 
             <div id="contact-section-mobile" className="flex flex-col pt-10 mx-[20px] h-full">

@@ -2,6 +2,7 @@ import Navbar from '@/components/ServicesNavbar';
 import Copyright from '@/components/Copyright';
 import ProgramHighlights from '@/components/ProgramHighlights';
 import React from 'react';
+import Image from 'next/image';
 
   const items = [
     {icon: "/services/avatar-icon.svg", title: "Personalized Nutrition Plan", description: "I will create a customized nutrition plan tailored to your specific needs and goals. My program emphasizes a balanced approach, incorporating lean proteins, whole grains, fruits, vegetables, and healthy fats while limiting processed foods and sugary beverages. By creating a caloric deficit through portion control and mindful eating, I will help you achieve sustainable fat loss without feeling deprived."},
@@ -37,7 +38,15 @@ export default function StrengthTraining() {
       <main className="min-h-screen font-normal text-black bg-white font-poppins text-body pt-[135px] md:pt-[185px] md:mt-[60px]">
 
         <section className="flex flex-col md:flex-row">
-          <img src="/services/strength-training-hero-image.jpg" alt="" className="object-cover md:w-3/5 md:max-h-[100vw] lg:max-h-[40vw]" />
+          <Image 
+            src="/services/strength-training-hero-image.jpg" 
+            alt="Strength Training Hero" 
+            width={694} 
+            height={1041} 
+            layout="responsive"
+            objectFit="cover"
+            className="md:w-3/5 md:max-h-[100vw] lg:max-h-[40vw]"
+          />
           <div className="flex flex-col items-center justify-center w-full">
             <div className="flex flex-col md:max-w-[900px] px-[20px] md:px-20 pt-10 md:pt-0">
               <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">

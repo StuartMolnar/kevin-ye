@@ -5,6 +5,7 @@ import CarouselArrow from './CarouselArrow';
 import Slider, { Settings } from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from 'next/image';
 
 const clients = [
     {'title': 'Client Story 1',
@@ -43,7 +44,14 @@ const ClientStories = () => {
     <section className="grid grid-cols-1 lg:grid-cols-2 mt-16 md:mt-[170px]">
       <div className="hidden lg:block relative bg-gold h-[900px] col-span-1">
           <div className="absolute right-0 w-[15%] h-full bg-white"></div>
-          <img src="/client-story-image.jpg" alt="" className="absolute w-[80%] top-1/2 transform -translate-y-1/2 -right-0 h-[500px] object-cover"/>
+          <div className="absolute w-[80%] top-1/2 transform -translate-y-1/2 -right-0 h-[500px]">
+              <Image 
+                  src="/client-story-image.jpg" 
+                  alt="Client story" 
+                  layout="fill" 
+                  objectFit="cover"
+              />
+          </div>
       </div>
 
       

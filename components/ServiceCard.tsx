@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import { FC } from 'react';
+
 type ServiceCardProps = {
   title: string,
   imageUrl: string,
@@ -5,11 +8,11 @@ type ServiceCardProps = {
   link: string,
 };
 
-const ServiceCard = ({ title, imageUrl, description, link}: ServiceCardProps) => {
+const ServiceCard: FC<ServiceCardProps> = ({ title, imageUrl, description, link }) => {
   return (
     <div className="flex flex-col items-center justify-between w-full h-[1000px] super-sm:h-[925px] md:h-[850px] card max-w-[480px] my-5 bg-white rounded shadow-custom">
       <div className="h-[320px] w-full max-w-[480px]">
-          <img src={imageUrl} alt={title} className="object-cover w-full h-full"/>
+        <Image src={imageUrl} alt={title} className="object-cover w-full h-full" width={480} height={320} />
       </div>
       <div className="grid grid-rows-[1fr,auto] h-full px-[20px] w-full md:px-10 pt-5 md:pt-10 max-w-[480px]"> 
           <div>
@@ -31,13 +34,5 @@ const ServiceCard = ({ title, imageUrl, description, link}: ServiceCardProps) =>
     </div>
   )
 }
-
-
-
-
-
-
-
-
   
 export default ServiceCard;
