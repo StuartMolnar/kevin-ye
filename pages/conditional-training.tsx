@@ -111,13 +111,17 @@ export default function StrengthTraining() {
             
             <div id="contact-section" className="mt-20">
               
-              <div className="bg-black text-white inline-block w-full px-[30px] py-[15px] text-center cursor-pointer hover:bg-gold">Contact Me Now</div>
+              <a href="mailto:kevinye@email.com?subject=Conditional Training Inquiry">
+                <div className="bg-black text-white inline-block max-w-[190px] px-[30px] py-[15px] cursor-pointer hover:bg-gold hover:text-black">Contact Me Now</div>
+              </a>
               <h2 className="pt-10 font-bold text-h2 md:text-h2-dsk">
                 (778)-1234-5678
               </h2>
-              <h2 className="pb-10 font-bold text-h2 md:text-h2-dsk">
-                kevinye@email.com
-              </h2>
+                <a href="mailto: kevinye@email.com">
+                  <h2 className="pb-10 font-bold text-h2">
+                      kevinye@email.com
+                  </h2>
+                </a>
               <Copyright />
             </div>
           </div>

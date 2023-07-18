@@ -102,14 +102,18 @@ export default function Home() {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt.
                 </p>
                 <div className="mt-20">
-            
-                <div className="bg-black text-white inline-block max-w-[190px] px-[30px] py-[15px] hover:bg-gold hover:text-black">Contact Me Now</div>
+
+                <a href="mailto:kevinye@email.com?subject=Personal Training General Inquiry">
+                  <div className="bg-black text-white inline-block max-w-[190px] px-[30px] py-[15px] cursor-pointer hover:bg-gold hover:text-black">Contact Me Now</div>
+                </a>
                 <h2 className="pt-10 font-bold text-h2">
                     (778)-1234-5678
                 </h2>
-                <h2 className="pb-10 font-bold text-h2">
-                    kevinye@email.com
-                </h2>
+                <a href="mailto: kevinye@email.com">
+                  <h2 className="pb-10 font-bold text-h2">
+                      kevinye@email.com
+                  </h2>
+                </a>
                 <Copyright />
             </div>
             </div>

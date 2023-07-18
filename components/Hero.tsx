@@ -30,13 +30,13 @@ const Hero = () => {
               
             <div className="flex flex-col pt-[24px] md:pt-10 space-y-[18px] md:space-x-5 md:flex-row md:space-y-0">
               <div className="flex space-x-5">
-                <a href="" className="">
+                <a href="https://www.youtube.com/channel/UC_gOew52b0yIK8i7SelGwSA" target="_blank" className="">
                   <img src="/linkedin.svg" alt="" className="w-14 h-14" />
                 </a>
-                <a href="" className="">
+                <a href="https://www.instagram.com/ye_kev/" target="_blank" className="">
                   <img src="/insta.svg" alt="" className="w-14 h-14" />
                 </a>
-                <a href="" className="">
+                <a href="https://www.tiktok.com/@fitbykev" target="_blank" className="">
                   <img src="/tiktok.svg" alt="" className="w-14 h-14" />
                 </a>
               </div>              
