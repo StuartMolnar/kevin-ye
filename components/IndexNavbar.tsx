@@ -4,20 +4,35 @@ import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [sections, setSections] = useState<HTMLElement[]>([]);
-    const [activeSection, setActiveSection] = useState('');
+    // const [sections, setSections] = useState<HTMLElement[]>([]);
+    // const [activeSection, setActiveSection] = useState('');
     const [isOpen, setOpen] = useState(false);
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const smoothScrollTo = (id: string) => {
-        const navbarHeight = 104; // adjust this value if the navbar's height changes (navbar height - 1)
+        const scrollOffsetDesktop = 200; // adjust this value to account for the height of the navbar with index navigation
+        const scrollOffsetMobile = 145
         const element = document.getElementById(id);
     
         if (element) {
             const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-            const offsetPosition = elementPosition - navbarHeight;
-
+            
+            let offset;
+            if (windowWidth >= 768) {
+                offset = elementPosition - scrollOffsetDesktop;
+            } else {
+                offset = elementPosition - scrollOffsetMobile;
+            }
+        
             window.scrollTo({
-                top: offsetPosition,
+                top: offset,
                 behavior: 'smooth'
             });
         }
@@ -28,46 +43,42 @@ const Navbar = () => {
         setOpen(false);
     };
     
-    
-    
-    
-
-    // underlines the navbar link based on currently visible page section
-    useEffect(() => {
-        const handleScroll = () => {
-            const show = window.scrollY > 50;
-            if (show !== isScrolled) {
-                setIsScrolled(show);
-            }
+    // // underlines the navbar link based on currently visible page section
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         const show = window.scrollY > 50;
+    //         if (show !== isScrolled) {
+    //             setIsScrolled(show);
+    //         }
         
-            const current = sections.find(
-                (section: HTMLElement) =>
-                    section.getBoundingClientRect().top > 0 &&
-                    section.getBoundingClientRect().top < window.innerHeight / 2
-            );
+    //         const current = sections.find(
+    //             (section: HTMLElement) =>
+    //                 section.getBoundingClientRect().top > 0 &&
+    //                 section.getBoundingClientRect().top < window.innerHeight / 2
+    //         );
         
-            if (current && activeSection !== current.id) {
-                setActiveSection(current.id);
-            }
-        };
+    //         if (current && activeSection !== current.id) {
+    //             setActiveSection(current.id);
+    //         }
+    //     };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [sections, isScrolled, activeSection]);
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, [sections, isScrolled, activeSection]);
 
-    useEffect(() => {
-        setSections(Array.from(document.querySelectorAll('section[id]')));
-    }, []);
+    // useEffect(() => {
+    //     setSections(Array.from(document.querySelectorAll('section[id]')));
+    // }, []);
 
-    useEffect(() => {
-        document.querySelectorAll('.underline').forEach((link) => {
-            link.classList.remove('underline');
-        });
+    // useEffect(() => {
+    //     document.querySelectorAll('.underline').forEach((link) => {
+    //         link.classList.remove('underline');
+    //     });
 
-        document.getElementById(`${activeSection}-link`)?.classList.add('underline');
-    }, [activeSection]);
+    //     document.getElementById(`${activeSection}-link`)?.classList.add('underline');
+    // }, [activeSection]);
     
     
 
@@ -92,7 +103,7 @@ const Navbar = () => {
             <p onClick={() => smoothScrollAndCloseMenu('about-section')} className="cursor-pointer">About</p>
             <p onClick={() => smoothScrollAndCloseMenu('services-section')} className="cursor-pointer">Fitness Programs</p>
             <p onClick={() => smoothScrollAndCloseMenu('client-stories-section')} className="cursor-pointer">Client Stories</p>
-            <p onClick={() => smoothScrollAndCloseMenu('contact-section-mobile')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</p>
+            <div onClick={() => smoothScrollAndCloseMenu(windowWidth > 1024 ? 'contact-section' : 'contact-section-mobile')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</div>
         </div>
         
         
