@@ -22,7 +22,7 @@ const services = [
     },
     {
       title: 'Weight Loss',
-      imageUrl: '/weight-loss-image.webp',
+      imageUrl: '/weight-loss.webp',
       description: 'My weight loss program is designed to help individuals like you shed unwanted body fat and achieve sustainable, long-term results. Unlike quick-fix solutions and fad diets, my comprehensive program focuses on creating healthy habits, adopting a balanced approach to nutrition, and incorporating effective exercise strategies.',
       link: '/weight-loss' 
     },
