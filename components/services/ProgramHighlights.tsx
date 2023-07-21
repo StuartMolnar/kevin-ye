@@ -9,8 +9,7 @@ type ProgramCardProps = {
     icon: string,
     title: string,
     description: string,
-  },
-  isMediumScreen: boolean
+  }
 };
 
 type ProgramHighlightProps = {
@@ -21,7 +20,9 @@ type ProgramHighlightProps = {
   }[],
 };
 
-const ProgramCard: React.FC<ProgramCardProps> = ({ item, isMediumScreen }) => {
+const ProgramCard: React.FC<ProgramCardProps> = ({ item}) => {
+  const windowWidth = useWindowWidth() || 0;
+  const isMediumScreen = windowWidth >= 768;
 
   const cardContent = (
     <div className="flex flex-col h-full col-span-1 p-10 pt-10 shadow-custom md:pt-10">
@@ -44,15 +45,13 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ item, isMediumScreen }) => {
 };
 
 const ProgramHighlights = ({ items }: ProgramHighlightProps) => {
-  const windowWidth = useWindowWidth() || 0;
-  const isMediumScreen = windowWidth >= 768;
 
   return (
     <section id="program-highlights-section" className="flex flex-col items-center pt-10 md:pt-[90px] mx-[20px] md:mx-[60px] xl:mx-[200px]">
       <h1 className="font-bold text-h1 md:text-h1-dsk">Program Highlights</h1>
       <div className="grid items-start grid-cols-1 md:grid-cols-2 max-w-[1500px] pt-[60px] md:gap-10 gap-y-5">
         {items.map((item, index) => (
-          <ProgramCard key={index} item={item} isMediumScreen={isMediumScreen} />
+          <ProgramCard key={index} item={item} />
         ))}
         <div className="flex flex-col col-span-1 p-10 bg-gold md:rounded-[2.5px] shadow-custom">
           <div className="flex items-center">

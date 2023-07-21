@@ -16,11 +16,11 @@ interface Props {
 
 const TrainingProgram: React.FC<Props> = ({ services, imageURL, email }) => {
   return (
-    <section id="training-program-section" className="flex flex-col items-center pt-10 md:pt-[90px]">
+    <section id="training-program-section" className="flex flex-col items-center pt-10 md:pt-[90px] ml-10 ">
       <h1 className="font-bold text-h1 md:text-h1-dsk">Program Highlights</h1>
       <div className="grid items-start grid-cols-1 md:grid-cols-2 pt-[60px] md:gap-10 gap-y-5">
 
-      <div className="flex flex-col w-auto col-span-1 pt-20 mx-5 md:mr-0 md:ml-[60px] xl:ml-[200px] space-y-10 md:pt-0">
+      <div className="flex flex-col w-auto col-span-1 pt-20 space-y-10 md:pt-0 ">
         {services.map((service, index) => (
           <div className="p-10 shadow-custom" key={index}>
             <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
