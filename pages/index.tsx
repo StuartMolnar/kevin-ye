@@ -122,7 +122,7 @@ export default function Home() {
                 <h1 className="font-bold text-h1 md:text-h1-dsk">
                     Workout with me
                 </h1>
-                <div className="flex pt-12">
+                <div className="flex pt-3">
                     <img src="/hero-bar-gold.svg" alt="" className="w-[154px] h-3" />
                     <img src="/hero-bar-black.svg" alt="" className="w-[154px] h-3 ml-1" />
                 </div>
