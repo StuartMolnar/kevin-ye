@@ -16,8 +16,8 @@ const Hero: React.FC<HeroProps> = ({ imageSrc, imageAlt, programTitle, programDe
             src={imageSrc} 
             alt={imageAlt} 
             layout="responsive"
-            width={1000}
-            height={500}
+            width={694}
+            height={1041}
             objectFit="cover"
             className="w-full h-full"
         />
