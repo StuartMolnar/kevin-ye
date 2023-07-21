@@ -3,7 +3,6 @@ const ServicesCarousel = dynamic(() => import('@/components/index/ServicesCarous
 const ClientStories = dynamic(() => import('@/components/index/ClientStories'), { ssr: false });
 const Navbar = dynamic(() => import('@/components/index/IndexNavbar'), { ssr: false });
 import Hero from '@/components/index/Hero';
-import Copyright from '@/components/Copyright';
 import Image from 'next/image';
 import AboutSection from '@/components/index/AboutSection';
 import Footer from '@/components/index/Footer';

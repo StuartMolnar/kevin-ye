@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import ClientStory from './ClientStory';
 import CarouselArrow from './CarouselArrow';
 import Slider, { Settings } from 'react-slick';

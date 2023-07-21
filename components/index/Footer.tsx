@@ -94,9 +94,15 @@ const MobileFooter = () => {
   const Footer = () => {
     const windowWidth = useWindowWidth();
   
+    // Don't render anything until we have the window width
+    if (windowWidth === undefined) {
+      return null;
+    }
+  
     return (
       windowWidth < 1024 ? <MobileFooter /> : <DesktopFooter />
     );
   };
   
   export default Footer;
+  

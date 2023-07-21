@@ -77,7 +77,7 @@ const Navbar = () => {
             <p onClick={() => smoothScrollAndCloseMenu('about-section')} className="cursor-pointer">About</p>
             <p onClick={() => smoothScrollAndCloseMenu('services-section')} className="cursor-pointer">Fitness Programs</p>
             <p onClick={() => smoothScrollAndCloseMenu('client-stories-section')} className="cursor-pointer">Client Stories</p>
-            <div onClick={() => smoothScrollAndCloseMenu(windowWidth > 1024 ? 'contact-section' : 'contact-section-mobile')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</div>
+            <div onClick={() => smoothScrollAndCloseMenu((windowWidth ?? 0) > 1024 ? 'contact-section-dsk' : 'contact-section-mobile')} className="inline-block text-white bg-black cursor-pointer mt-24 py-[15.5px] px-[30px] rounded-[2.5px]">Get In Touch</div>
         </div>
         
         
