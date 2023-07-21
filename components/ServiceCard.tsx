@@ -10,7 +10,7 @@ type ServiceCardProps = {
 
 const ServiceCard: FC<ServiceCardProps> = ({ title, imageUrl, description, link }) => {
   return (
-    <div className="flex flex-col items-center justify-between w-full h-[800px] super-sm:h-[710px] md:h-[750px] card max-w-[480px] my-5 bg-white rounded shadow-custom">
+    <div className="ml-[2%] w-[calc(100%-4%)] flex flex-col items-center justify-between  h-[800px] super-sm:h-[710px] md:h-[750px] card max-w-[480px] my-5 bg-white rounded shadow-custom">
       <div className="h-[320px] w-full max-w-[480px]">
         <Image src={imageUrl} alt={title} className="object-cover w-full h-full" width={480} height={320} />
       </div>
