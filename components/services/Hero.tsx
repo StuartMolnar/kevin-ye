@@ -11,15 +11,18 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ imageSrc, imageAlt, programTitle, programDescription }) => {
   return (
     <section className="flex flex-col md:flex-row">
-      <Image 
-        src={imageSrc} 
-        alt={imageAlt} 
-        width={694} 
-        height={1041} 
-        layout="responsive"
-        objectFit="cover"
-        className="md:w-3/5 md:max-h-[100vw] lg:max-h-[40vw]"
-      />
+      <div className="relative md:w-3/5 md:max-h-[100vw] lg:max-h-[40vw]">
+        <Image 
+            src={imageSrc} 
+            alt={imageAlt} 
+            layout="responsive"
+            width={1000}
+            height={500}
+            objectFit="cover"
+            className="w-full h-full"
+        />
+
+      </div>
       <div className="flex flex-col items-center justify-center w-full">
         <div className="flex flex-col md:max-w-[900px] px-[20px] md:px-20 pt-10 md:pt-0">
           <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
