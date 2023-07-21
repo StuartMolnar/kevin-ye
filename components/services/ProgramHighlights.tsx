@@ -12,7 +12,7 @@ type ProgramHighlightProps = {
 };
 
 const ProgramHighlights = ({ items }: ProgramHighlightProps) => {
-  const windowWidth = useWindowWidth();
+  const windowWidth = useWindowWidth() || 0;
   const isMediumScreen = windowWidth >= 768;
 
   return (
