@@ -2,8 +2,6 @@
 import React from 'react';
 import useWindowWidth from '@/hooks/useWindowWidth';
 import { smoothScrollTo } from '@/utils/scrollUtils';
-import { Fade } from 'react-awesome-reveal';
-import { useScrollDirection } from '@/hooks/useScrollDirection';
 
 type ProgramCardProps = {
   item: {
@@ -23,9 +21,7 @@ type ProgramHighlightProps = {
 };
 
 const ProgramCard: React.FC<ProgramCardProps> = ({ item, isMediumScreen }) => {
-  const scrollingDown = useScrollDirection();
-
-  const cardContent = (
+  return (
     <div className="flex flex-col h-full col-span-1 p-10 pt-10 shadow-custom md:pt-10">
       <img src={item.icon} alt="" className="w-[26px] h-[29px]" />
       <p className="font-medium text-header-sub md:text-header-sub-dsk pt-[22px]">{item.title}</p>
@@ -41,9 +37,8 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ item, isMediumScreen }) => {
       )}
     </div>
   );
-
-  return scrollingDown ? <Fade>{cardContent}</Fade> : cardContent;
 };
+
 
 const ProgramHighlights = ({ items }: ProgramHighlightProps) => {
   const windowWidth = useWindowWidth() || 0;
