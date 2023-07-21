@@ -59,6 +59,7 @@ const ServicesCarousel = () => {
 
   // update slidesToShow based on window size
   let slidesToShow;
+  if (windowWidth) {
     if (windowWidth < breakpoint_medium) {
       slidesToShow = 1;
     } else if (windowWidth < breakpoint_large) {
@@ -66,6 +67,11 @@ const ServicesCarousel = () => {
     } else {
       slidesToShow = 3;
     }
+  } else {
+    // Fallback value for slidesToShow when windowWidth is undefined
+    slidesToShow = 3; 
+  }
+
 
   const settings: Settings = {
     dots: true,
