@@ -1,5 +1,4 @@
 import Navbar from '@/components/services/ServicesNavbar';
-import Copyright from '@/components/Copyright';
 import ProgramHighlights from '@/components/services/ProgramHighlights';
 import TrainingProgram from '@/components/services/TrainingProgram';
 import React from 'react';
@@ -56,7 +55,32 @@ export default function StrengthTraining() {
 
         <ProgramHighlights items={items} />
 
-        
+        <TrainingProgram 
+          services={[
+            {
+              title: 'STRENGTH TRAINING PROGRAM',
+              duration: '12-Week Package',
+              price: 600,
+              description: [
+                'Description line goes here',
+                'Description line goes here',
+                'Description line goes here'
+              ]
+            },
+            {
+              title: 'STRENGTH TRAINING PROGRAM',
+              duration: '16-Week Package',
+              price: 720,
+              description: [
+                'Description line goes here',
+                'Description line goes here',
+                'Description line goes here'
+              ]
+            },
+          ]}
+          imageURL="/services/pricing-image.jpg"
+          email="kevinye@email.com"
+        />
       
 
       </main>
