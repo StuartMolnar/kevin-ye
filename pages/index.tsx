@@ -1,12 +1,12 @@
 import dynamic from 'next/dynamic';
-const ServicesCarousel = dynamic(() => import('@/components/ServicesCarousel'), { ssr: false });
-const ClientStories = dynamic(() => import('@/components/ClientStories'), { ssr: false });
-const Navbar = dynamic(() => import('@/components/IndexNavbar'), { ssr: false });
-import Hero from '@/components/Hero';
+const ServicesCarousel = dynamic(() => import('@/components/index/ServicesCarousel'), { ssr: false });
+const ClientStories = dynamic(() => import('@/components/index/ClientStories'), { ssr: false });
+const Navbar = dynamic(() => import('@/components/index/IndexNavbar'), { ssr: false });
+import Hero from '@/components/index/Hero';
 import Copyright from '@/components/Copyright';
 import Image from 'next/image';
-import AboutSection from '@/components/AboutSection';
-import Footer from '@/components/Footer';
+import AboutSection from '@/components/index/AboutSection';
+import Footer from '@/components/index/Footer';
 
 export default function Home() {
 
