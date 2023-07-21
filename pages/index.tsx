@@ -29,17 +29,17 @@ export default function Home() {
 
         <Hero />
 
-        <section className="flex flex-col mt-16 md:mt-32 md:flex-row">
-          <div ref={containerRef} className='md:w-1/2 h-[400px] md:h-[600px] xl:h-[634px] relative'>
-                <Image
-                    src="/about-image.jpg"
-                    alt=""
-                    fill
-                    style={{ objectFit: 'cover' }}
-                />
-            </div>
+        <section className="flex flex-col mt-16 md:flex-row md:mt-32">
+          <div ref={containerRef} className='flex-1 h-[400px] md:h-auto relative'>
+              <Image
+                  src="/about-image.jpg"
+                  alt=""
+                  fill
+                  style={{ objectFit: 'cover' }}
+              />
+          </div>
 
-            <div id="about-section" className="flex flex-col justify-center md:w-1/2 ml-0 md:p-[60px] xl:p-[130px] pt-[40px] px-[20px] transition-all duration-200 ease-in-out">
+          <div id="about-section" className="flex flex-1 flex-col justify-center ml-0 md:p-[60px] xl:p-[200px] pt-[40px] px-[20px] transition-all duration-200 ease-in-out">
               <h1 className="font-bold text-h1 md:text-h1-dsk">
                 About Kevin Ye
               </h1>
