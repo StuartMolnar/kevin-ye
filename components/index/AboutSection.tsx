@@ -1,30 +1,34 @@
-import React, { } from 'react';
 import Image from 'next/image';
-import { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useContext } from 'react';
+import BlurhashContext from '@/contexts/BlurhashContext';
 
 const AboutSection = () => {
 
-    const containerRef = useRef<HTMLDivElement>(null);
+  const blurhashMap = useContext(BlurhashContext);
+
+  const containerRef = useRef<HTMLDivElement>(null);
   
-    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   
-    useEffect(() => {
-      if (containerRef.current) {
-          setDimensions({
-              width: containerRef.current.offsetWidth,
-              height: containerRef.current.offsetHeight
-          });
-      }
-    }, []);
+  useEffect(() => {
+    if (containerRef.current) {
+        setDimensions({
+            width: containerRef.current.offsetWidth,
+            height: containerRef.current.offsetHeight
+        });
+    }
+  }, []);
 
   return (
     <section className="flex flex-col mt-16 md:flex-row md:mt-32">
           <div ref={containerRef} className='flex-1 h-[400px] md:h-auto relative'>
               <Image
-                  src="/about-image.jpg"
+                  src="/about-image.webp"
                   alt=""
                   fill
                   style={{ objectFit: 'cover' }}
+                  placeholder={blurhashMap["about-image.webp"] ? "blur" : undefined}
+                  blurDataURL={blurhashMap["about-image.webp"] ? `data:image/svg+xml;base64,${blurhashMap["about-image.webp"]}` : undefined}
               />
           </div>
 

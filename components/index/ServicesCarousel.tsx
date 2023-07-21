@@ -10,19 +10,19 @@ import "slick-carousel/slick/slick-theme.css";
 const services = [
     {
       title: 'Strength Training',
-      imageUrl: '/strength-training.jpg',
+      imageUrl: '/strength-training.webp',
       description: 'My strength training program is designed to help individuals of all fitness levels build strength, increase muscle mass, and achieve their goals. With personalized training plans, expert guidance, emphasis on proper technique, and a focus on progress tracking, I provide a comprehensive and supportive environment for your strength training journey.',
       link: '/strength-training'
     },
     {
       title: 'Conditional Training',
-      imageUrl: '/conditional-training.jpg',
+      imageUrl: '/conditional-training.webp',
       description: 'My conditioning training program is tailored to help individuals of all fitness levels improve their overall fitness, enhance athletic performance, and boost endurance. With personalized plans targeting cardiovascular endurance, strength, agility, and flexibility, my dynamic workouts and expert coaching will guide you towards achieving your conditioning goals.',
       link: '/conditional-training'
     },
     {
       title: 'Weight Loss',
-      imageUrl: '/placeholder.jpg',
+      imageUrl: '/placeholder.webp',
       description: 'My weight loss program is designed to help individuals like you shed unwanted body fat and achieve sustainable, long-term results. Unlike quick-fix solutions and fad diets, my comprehensive program focuses on creating healthy habits, adopting a balanced approach to nutrition, and incorporating effective exercise strategies.',
       link: '/weight-loss' 
     },

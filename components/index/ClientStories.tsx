@@ -6,6 +6,9 @@ import Slider, { Settings } from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
+import _blurhashMap from "@/public/blurhash_map.json";
+
+const blurhashMap: { [key: string]: string | undefined } = _blurhashMap;
 
 const clients = [
     {'title': 'Client Story 1',
@@ -46,18 +49,20 @@ const ClientStories = () => {
           <div className="absolute right-0 w-[15%] h-full bg-white"></div>
           <div className="absolute w-[80%] top-1/2 transform -translate-y-1/2 -right-0 h-[500px]">
               <Image 
-                  src="/client-story-image.jpg" 
+                  src="/client-story-image.webp" 
                   alt="Client story" 
                   layout="fill" 
                   objectFit="cover"
+                  placeholder={blurhashMap["client-story-image.webp"] ? "blur" : undefined}
+                  blurDataURL={blurhashMap["client-story-image.webp"] ? `data:image/svg+xml;base64,${blurhashMap["client-story-image.webp"]}` : undefined}
               />
           </div>
       </div>
 
       
-      <div className="lg:hidden relative bg-gold h-[400px] md:h-[650px] col-span-1">
+      <div className="lg:hidden relative bg-gold h-[400px] md:h-[650px] border-none col-span-1">
         <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-full h-[15%] bg-white"></div>
-        <img src="/client-story-image.jpg" alt="" className="absolute max-w-[80vw] left-1/2 transform -translate-x-1/2 bottom-0 h-[300px] md:h-[500px] object-cover"/>
+        <img src="/client-story-image.webp" alt="" className="absolute max-w-[80vw] left-1/2 transform -translate-x-1/2 bottom-0 h-[300px] md:h-[500px] object-cover"/>
       </div>
 
       <div id="client-stories-section" className="flex flex-col col-span-1">

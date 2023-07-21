@@ -25,14 +25,14 @@ export default function StrengthTraining() {
 
       <main className="min-h-screen font-normal text-black bg-white font-poppins text-body pt-[135px] md:pt-[185px] md:mt-[60px]">
 
-        <Fade>
-          <Hero 
-            imageSrc="/services/strength-training-image.jpg" 
-            imageAlt="Strength Training Hero" 
-            programTitle="STRENGTH TRAINING PROGRAM"
-            programDescription="My strength training program is designed to help individuals of all fitness levels build strength, increase muscle mass, and achieve their personal fitness goals. Whether you are a beginner looking to establish a foundation or an experienced individual seeking to take your strength to the next level, my comprehensive program offers tailored workouts and expert guidance to ensure optimal results."
-          />
-        </Fade>
+      <Fade>
+        <Hero 
+          imageSrc="/services/strength-training-image.webp" 
+          imageAlt="Strength Training Hero" 
+          programTitle="STRENGTH TRAINING PROGRAM"
+          programDescription="My strength training program is designed to help individuals of all fitness levels build strength, increase muscle mass, and achieve their personal fitness goals. Whether you are a beginner looking to establish a foundation or an experienced individual seeking to take your strength to the next level, my comprehensive program offers tailored workouts and expert guidance to ensure optimal results."
+        />
+      </Fade>
         
         <Fade>
           <ProgramHighlights items={items} />
@@ -62,7 +62,7 @@ export default function StrengthTraining() {
                 ]
               },
             ]}
-            imageURL="/services/pricing-image.jpg"
+            imageURL="/services/pricing-image.webp"
             email="kevinye@email.com"
           />
         </Fade>

@@ -1,8 +1,7 @@
-import React, { } from 'react';
 import Image from 'next/image';
 import { smoothScrollTo } from '@/utils/scrollUtils';
 
-const Hero = () => {
+const Hero = () => {  
 
   return (
     <section id="hero-section" className="relative flex mx-[20px] md:mx-[60px] xl:mx-[200px]">

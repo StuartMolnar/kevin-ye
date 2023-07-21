@@ -11,6 +11,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      objectPosition: {
+        'top': 'top',
+      },
       screens: {
         'customHeroLogo': '1950px',
         'xl': '1350px',

@@ -24,7 +24,7 @@ export default function StrengthTraining() {
 
         <Fade>
           <Hero 
-            imageSrc="/services/weight-loss-image.jpg" 
+            imageSrc="/services/weight-loss-image.webp" 
             imageAlt="Weight Loss Hero" 
             programTitle="WEIGHT LOSS PROGRAM"
             programDescription="My weight loss program is designed to help individuals like you shed unwanted body fat and achieve sustainable, long-term results. Unlike quick-fix solutions and fad diets, my comprehensive program focuses on creating healthy habits, adopting a balanced approach to nutrition, and incorporating effective exercise strategies. Whether your goal is to improve overall health or enhance your physical appearance, my program offers the tools and support needed to reach your fat loss goals."
@@ -61,7 +61,7 @@ export default function StrengthTraining() {
                 ]
               },
             ]}
-            imageURL="/services/pricing-image.jpg"
+            imageURL="/services/pricing-image.webp"
             email="kevinye@email.com"
           />
         </Fade>

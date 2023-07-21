@@ -26,7 +26,7 @@ export default function StrengthTraining() {
 
       <Fade>
         <Hero 
-          imageSrc="/services/conditional-training-image.jpg" 
+          imageSrc="/services/conditional-training-image.webp" 
           imageAlt="Conditioning Training Hero" 
           programTitle="CONDITIONING TRAINING PROGRAM"
           programDescription="My conditioning training program is tailored to help individuals of all fitness levels improve their overall fitness, enhance athletic performance, and boost endurance. With personalized plans targeting cardiovascular endurance, strength, agility, and flexibility, my dynamic workouts and expert coaching will guide you towards achieving your conditioning goals. Join me in unlocking your potential and taking your fitness and performance to new heights."
@@ -63,7 +63,7 @@ export default function StrengthTraining() {
                 ]
               },
             ]}
-            imageURL="/services/pricing-image.jpg"
+            imageURL="/services/pricing-image.webp"
             email="kevinye@email.com"
           />
         </Fade>

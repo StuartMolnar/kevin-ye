@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { smoothScrollTo } from '@/utils/scrollUtils';
+import React, { useContext } from 'react';
+import BlurhashContext from '@/contexts/BlurhashContext';
 
 interface HeroProps {
   imageSrc: string;
@@ -9,6 +11,10 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ imageSrc, imageAlt, programTitle, programDescription }) => {
+  
+  const blurhashMap = useContext(BlurhashContext);
+  const blurhash = blurhashMap[imageSrc];
+
   return (
     <section className="flex flex-col md:flex-row">
       <div className="relative md:w-3/5 md:max-h-[100vw] lg:max-h-[40vw]">
@@ -20,8 +26,9 @@ const Hero: React.FC<HeroProps> = ({ imageSrc, imageAlt, programTitle, programDe
             height={1041}
             objectFit="cover"
             className="w-full h-full"
+            placeholder={blurhash ? "blur" : undefined}
+            blurDataURL={blurhash ? `data:image/svg+xml;base64,${blurhash}` : undefined}
         />
-
       </div>
       <div className="flex flex-col items-center justify-center w-full">
         <div className="flex flex-col md:max-w-[900px] px-[20px] md:px-20 pt-10 md:pt-0">

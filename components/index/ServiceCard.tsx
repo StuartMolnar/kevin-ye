@@ -1,5 +1,7 @@
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import { FC } from 'react';
+import BlurhashContext from '@/contexts/BlurhashContext';
 
 type ServiceCardProps = {
   title: string,
@@ -9,10 +11,22 @@ type ServiceCardProps = {
 };
 
 const ServiceCard: FC<ServiceCardProps> = ({ title, imageUrl, description, link }) => {
+  
+  const blurhashMap = useContext(BlurhashContext);
+  const blurhash = blurhashMap[imageUrl];
+
   return (
     <div className="ml-[2%] w-[calc(100%-4%)] flex flex-col items-center justify-between  h-[800px] super-sm:h-[710px] md:h-[780px] card max-w-[480px] my-5 bg-white rounded shadow-custom">
       <div className="h-[320px] w-full max-w-[480px]">
-        <Image src={imageUrl} alt={title} className="object-cover w-full h-full" width={480} height={320} />
+        <Image 
+          src={imageUrl} 
+          alt={title} 
+          className="object-cover w-full h-full" 
+          width={480} 
+          height={320}
+          placeholder={blurhash ? "blur" : undefined}
+          blurDataURL={blurhash ? `data:image/svg+xml;base64,${blurhash}` : undefined} 
+        />
       </div>
       <div className="grid grid-rows-[1fr,auto] h-full px-[20px] w-full md:px-10 pt-5 md:pt-10 max-w-[480px]"> 
           <div>
