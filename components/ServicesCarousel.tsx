@@ -114,7 +114,7 @@ const ServicesCarousel = () => {
           <CarouselArrow initialSrc="/carousel-arrow-left.svg" hoverSrc="/carousel-arrow-left-hover.svg" onClick={handlePrev}/>
         </div>    
         
-        <Slider {...settings} ref={sliderRef} className="w-[calc(100%-20%)] mx-auto space-x-5 md:w-4/5 max-w-[1850px] service-carousel">
+        <Slider {...settings} ref={sliderRef} className="w-[calc(100%-10%)] mx-auto space-x-0 md:w-4/5 max-w-[1850px] service-carousel">
           {services.map((service, index) => (
               <div key={index} className="">
                   <ServiceCard 
