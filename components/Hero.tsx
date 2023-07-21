@@ -1,13 +1,8 @@
 import React, { } from 'react';
 import Image from 'next/image';
+import { smoothScrollTo } from '@/utils/scrollUtils';
 
 const Hero = () => {
-    
-    const smoothScrollTo = (id: string) => {
-        document.getElementById(id)?.scrollIntoView({
-          behavior: 'smooth',
-        });
-    };
 
   return (
     <section id="hero-section" className="relative flex mx-[20px] md:mx-[60px] xl:mx-[200px]">

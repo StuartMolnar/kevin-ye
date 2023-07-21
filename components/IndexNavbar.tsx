@@ -1,42 +1,16 @@
 'use client';
 import Hamburger from 'hamburger-react'
 import React, { useState, useEffect } from 'react';
+import { smoothScrollTo } from '@/utils/scrollUtils';
+import useWindowWidth from '@/hooks/useWindowWidth';
+import useScrollPosition from '@/hooks/useScrollPosition';
 
 const Navbar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
     // const [sections, setSections] = useState<HTMLElement[]>([]);
     // const [activeSection, setActiveSection] = useState('');
+    const isScrolled = useScrollPosition();
     const [isOpen, setOpen] = useState(false);
-
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-    useEffect(() => {
-        const handleResize = () => setWindowWidth(window.innerWidth);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    const smoothScrollTo = (id: string) => {
-        const scrollOffsetDesktop = 200; // adjust this value to account for the height of the navbar with index navigation
-        const scrollOffsetMobile = 145
-        const element = document.getElementById(id);
-    
-        if (element) {
-            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-            
-            let offset;
-            if (windowWidth >= 768) {
-                offset = elementPosition - scrollOffsetDesktop;
-            } else {
-                offset = elementPosition - scrollOffsetMobile;
-            }
-        
-            window.scrollTo({
-                top: offset,
-                behavior: 'smooth'
-            });
-        }
-    };
+    const windowWidth = useWindowWidth();
     
     const smoothScrollAndCloseMenu = (id: string) => {
         smoothScrollTo(id);

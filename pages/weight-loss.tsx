@@ -3,6 +3,7 @@ import Copyright from '@/components/Copyright';
 import ProgramHighlights from '@/components/ProgramHighlights';
 import React from 'react';
 import Image from 'next/image';
+import { smoothScrollTo } from '@/utils/scrollUtils';
 
   const items = [
     {icon: "/services/avatar-icon.svg", title: "Personalized Nutrition Plan", description: "I will create a customized nutrition plan tailored to your specific needs and goals. My program emphasizes a balanced approach, incorporating lean proteins, whole grains, fruits, vegetables, and healthy fats while limiting processed foods and sugary beverages. By creating a caloric deficit through portion control and mindful eating, I will help you achieve sustainable fat loss without feeling deprived."},
@@ -13,22 +14,6 @@ import Image from 'next/image';
   ]
 
 export default function StrengthTraining() {
-
-  const smoothScrollTo = (id: string) => {
-    const navbarHeight = 104; // adjust this value if the navbar's height changes (navbar height - 1)
-    const element = document.getElementById(id);
-    
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - navbarHeight;
-  
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-  
 
   return (
     <div>

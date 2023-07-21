@@ -5,22 +5,10 @@ const Navbar = dynamic(() => import('@/components/IndexNavbar'), { ssr: false })
 import Hero from '@/components/Hero';
 import Copyright from '@/components/Copyright';
 import Image from 'next/image';
-import { useRef, useEffect, useState } from 'react';
+import AboutSection from '@/components/AboutSection';
+import Footer from '@/components/Footer';
 
 export default function Home() {
-
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-
-  useEffect(() => {
-    if (containerRef.current) {
-        setDimensions({
-            width: containerRef.current.offsetWidth,
-            height: containerRef.current.offsetHeight
-        });
-    }
-  }, []);
 
   return (
     <div id="screen-top">
@@ -29,33 +17,7 @@ export default function Home() {
 
         <Hero />
 
-        <section className="flex flex-col mt-16 md:flex-row md:mt-32">
-          <div ref={containerRef} className='flex-1 h-[400px] md:h-auto relative'>
-              <Image
-                  src="/about-image.jpg"
-                  alt=""
-                  fill
-                  style={{ objectFit: 'cover' }}
-              />
-          </div>
-
-          <div id="about-section" className="flex flex-1 flex-col justify-center ml-0 md:p-[60px] xl:p-[200px] pt-[40px] px-[20px] transition-all duration-200 ease-in-out">
-              <h1 className="font-bold text-h1 md:text-h1-dsk">
-                About Kevin Ye
-              </h1>
-              <div className="hidden pt-3 md:flex">
-                <img src="/about-bar-gold.svg" alt="" className="w-24 h-3" />
-                <img src="/about-bar-black.svg" alt="" className="w-24 h-3 -ml-1" />
-              </div>
-              <div className="md:hidden flex pt-[18px] ">
-                <img src="/hero-bar-gold.svg" alt="" className="w-[73px]  h-[5px]" />
-                <img src="/hero-bar-black.svg" alt="" className="w-[73px] h-[5px] ml-1" />
-              </div>
-              <p className="mt-[24px] md:mt-10 mb-[40px] md:mb-16 max-h-[450px] md:max-h-[10000px] overflow-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt scelerisque. Suspendisse potenti. Sed sed porttitor lacus. Nunc et ante id purus maximus rhoncus. Quisque ac est eu nunc commodo molestie id at dui. Aenean egestas tellus ante, ut maximus nunc luctus eget. Sed tincidunt id tortor quis venenatis. Suspendisse rutrum accumsan congue. Proin pharetra tincidunt enim, et fringilla leo interdum in. Cras eget magna egestas, semper felis facilisis, volutpat nisi. Donec ex massa, semper eu urna at, bibendum dapibus nulla. Sed tristique dignissim feugiat.
-              </p>
-            </div>
-        </section>
+        <AboutSection />
         
 
         <section className="bg-gold w-full py-[40px] md:py-[70px] px-[20px] md:px-10 flex flex-col justify-center items-center transition-all duration-200 ease-in-out">
@@ -68,92 +30,7 @@ export default function Home() {
 
         <ClientStories />
 
-        {/* mobile footer */}
-        <section className="flex pt-16 lg:hidden">
-          
-          <div className="flex flex-col">
-            
-
-          <Image 
-            src="/footer-image.jpg" 
-            alt="Footer" 
-            width={720} 
-            height={900} 
-            layout="responsive"
-            objectFit="cover"
-            className="w-screen"
-          />
-
-
-            <div id="contact-section-mobile" className="flex flex-col pt-10 mx-[20px] h-full">
-              <h1 className="font-bold text-h1 md:text-h1-dsk">
-                  Workout with me
-                </h1>
-                <div className="flex pt-[18px]">
-                  <img src="/hero-bar-gold.svg" alt="" className="w-[154px] h-3" />
-                  <img src="/hero-bar-black.svg" alt="" className="w-[154px] h-3 ml-1" />
-                </div>
-                <p className="pt-[24px]">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt.
-                </p>
-                <div className="mt-20">
-              
-              <div className="bg-black text-white inline-block max-w-[190px] px-[30px] py-[15px]">Contact Me Now</div>
-              <h2 className="pt-10 font-bold text-h2">
-                (778)-1234-5678
-              </h2>
-              <h2 className="pb-10 font-bold text-h2">
-                kevinye@email.com
-              </h2>
-              <Copyright />
-            </div>
-            </div>
-            
-          </div>
-
-        </section>
-
-    
-      {/* desktop footer */}
-      <section id="contact-section-dsk" className="hidden pt-20 lg:flex">
-
-        <div className="flex items-center w-3/5">
-            <div className="flex flex-col max-w-[500px] mx-[20px] lg:mx-auto">
-                <h1 className="font-bold text-h1 md:text-h1-dsk">
-                    Workout with me
-                </h1>
-                <div className="flex pt-3">
-                    <img src="/hero-bar-gold.svg" alt="" className="w-[154px] h-3" />
-                    <img src="/hero-bar-black.svg" alt="" className="w-[154px] h-3 ml-1" />
-                </div>
-                <p className="pt-10">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt.
-                </p>
-                <div className="mt-20">
-
-                <a href="mailto:kevinye@email.com?subject=Personal Training General Inquiry">
-                  <div className="bg-black text-white inline-block max-w-[190px] px-[30px] py-[15px] cursor-pointer hover:bg-gold hover:text-black">Contact Me Now</div>
-                </a>
-                <h2 className="pt-10 font-bold text-h2">
-                    (778)-1234-5678
-                </h2>
-                <a href="mailto: kevinye@email.com">
-                  <h2 className="pb-10 font-bold text-h2">
-                      kevinye@email.com
-                  </h2>
-                </a>
-                <Copyright />
-            </div>
-            </div>
-            
-        </div>
-
-        <img src="/footer-image.jpg" alt="" className="object-cover w-2/5 h-screen"/>
-
-      </section>
-
-
-    
+        <Footer />       
 
       </main>
     </div>

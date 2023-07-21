@@ -25,7 +25,7 @@ const ProgramHighlights = ({ items }: ProgramHighlightProps) => {
   }, []);
 
   return (
-    <section id="program-highlights-section" className="flex flex-col items-center pt-10 md:pt-[90px]">
+    <section id="program-highlights-section" className="flex flex-col items-center pt-10 md:pt-[90px] mx-[20px] md:mx-[60px] xl:mx-[200px]">
       <h1 className="font-bold text-h1 md:text-h1-dsk">Program Highlights</h1>
       <div className="grid items-start grid-cols-1 md:grid-cols-2 max-w-[1500px] pt-[60px] md:gap-10 gap-y-5 mx-5">
         {items.map((item, index) => (

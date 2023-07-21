@@ -3,6 +3,7 @@ import Copyright from '@/components/Copyright';
 import ProgramHighlights from '@/components/ProgramHighlights';
 import React from 'react';
 import Image from 'next/image';
+import { smoothScrollTo } from '@/utils/scrollUtils';
 
   const items = [
     {icon: "/services/avatar-icon.svg", title: "Tailored Conditioning Plans", description: "I will create a customized conditioning plan based on your specific fitness goals, current fitness level, and individual needs. The program will be designed to target key components of conditioning, such as cardiovascular endurance, muscular endurance, agility, speed, and flexibility. With a personalized plan, we can optimize your training and achieve significant improvements in your overall fitness."},
@@ -15,22 +16,6 @@ import Image from 'next/image';
   ]
 
 export default function StrengthTraining() {
-
-  const smoothScrollTo = (id: string) => {
-    const navbarHeight = 104; // adjust this value if the navbar's height changes (navbar height - 1)
-    const element = document.getElementById(id);
-    
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - navbarHeight;
-  
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-  
 
   return (
     <div>

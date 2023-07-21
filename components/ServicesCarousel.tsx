@@ -1,6 +1,7 @@
 'use client';
 import React, { useRef, useState, useEffect } from 'react';
 import ServiceCard from './ServiceCard';
+import useWindowWidth from '@/hooks/useWindowWidth';
 import CarouselArrow from './CarouselArrow';
 import Slider, { Settings } from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -52,33 +53,25 @@ const responsive = [
 
 const ServicesCarousel = () => {
   /* ----- Carousel Slider ----- */
+  const windowWidth = useWindowWidth();
   const sliderRef = useRef<SliderWithRef>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [slidesToShow, setSlidesToShow] = useState(3); // default slidesToShow
 
   // update slidesToShow based on window size
-  useEffect(() => {
-    const updateSlidesToShow = () => {
-      if (window.innerWidth < breakpoint_medium) {
-        setSlidesToShow(1);
-      } else if (window.innerWidth < breakpoint_large) {
-        setSlidesToShow(2);
-      } else {
-        setSlidesToShow(3);
-      }
-    };
-
-    window.addEventListener('resize', updateSlidesToShow);
-    updateSlidesToShow(); 
-
-    return () => window.removeEventListener('resize', updateSlidesToShow);
-  }, []);
+  let slidesToShow;
+    if (windowWidth < breakpoint_medium) {
+      slidesToShow = 1;
+    } else if (windowWidth < breakpoint_large) {
+      slidesToShow = 2;
+    } else {
+      slidesToShow = 3;
+    }
 
   const settings: Settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     nextArrow: <div style={{display: "none"}} />,
     prevArrow: <div style={{display: "none"}} />,

@@ -2,6 +2,8 @@
 import Hamburger from 'hamburger-react'
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { smoothScrollTo } from '@/utils/scrollUtils';
+import useScrollPosition from '@/hooks/useScrollPosition';
 
 interface DropdownProps {
     isOpen: boolean;
@@ -21,40 +23,15 @@ const Dropdown: React.FC<DropdownProps> = ({ isOpen, width }) => {
 const Navbar = () => {
     const moreServicesRef = useRef<HTMLDivElement>(null);
     const [isDropdownOpen, setDropdownOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+    const isScrolled = useScrollPosition();
     const [isOpen, setOpen] = useState(false);
     const [isServicesOpen, setServicesOpen] = useState(false);
 
-    const smoothScrollTo = (id: string) => {
-        const navbarHeight = 104;
-        const element = document.getElementById(id);
-    
-        if (element) {
-            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-            const offsetPosition = elementPosition - navbarHeight;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    };
     
     const smoothScrollAndCloseMenu = (id: string) => {
         smoothScrollTo(id);
         setOpen(false);
     };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const isUserAtTop = window.scrollY === 0;
-            setIsScrolled(!isUserAtTop);
-        };
-    
-        window.addEventListener('scroll', handleScroll);
-
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []); 
     
         
 
