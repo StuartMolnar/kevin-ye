@@ -1,6 +1,8 @@
 import Navbar from '@/components/services/ServicesNavbar';
 import Copyright from '@/components/Copyright';
+import Hero from '@/components/services/Hero';
 import ProgramHighlights from '@/components/services/ProgramHighlights';
+import TrainingProgram from '@/components/services/TrainingProgram';
 import React from 'react';
 import Image from 'next/image';
 import { smoothScrollTo } from '@/utils/scrollUtils';
@@ -24,104 +26,44 @@ export default function StrengthTraining() {
 
       <main className="min-h-screen font-normal text-black bg-white font-poppins text-body pt-[135px] md:pt-[185px] md:mt-[60px]">
 
-        <section className="flex flex-col md:flex-row">
-          <Image 
-            src="/services/conditional-training-image.jpg" 
-            alt="Strength Training Hero" 
-            width={694} 
-            height={1041} 
-            layout="responsive"
-            objectFit="cover"
-            className="md:w-3/5 md:max-h-[100vw] lg:max-h-[40vw]"
-          />
-          <div className="flex flex-col items-center justify-center w-full">
-            <div className="flex flex-col md:max-w-[900px] px-[20px] md:px-20 pt-10 md:pt-0">
-              <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
-                CONDITIONING TRAINING PROGRAM
-              </p>
-              <h1 className="pt-3 font-bold text-h1 md:text-h1-dsk">Become stronger, fitter, and more confident</h1>
-              <div className="flex pt-3">
-                  <img src="/about-bar-gold.svg" alt="" className="w-24 h-3" />
-                  <img src="/about-bar-black.svg" alt="" className="w-24 h-3 -ml-1" />
-              </div>
-              <p className="pt-10">
-                My conditioning training program is tailored to help individuals of all fitness levels improve their overall fitness, enhance athletic performance, and boost endurance. With personalized plans targeting cardiovascular endurance, strength, agility, and flexibility, my dynamic workouts and expert coaching will guide you towards achieving your conditioning goals. Join me in unlocking your potential and taking your fitness and performance to new heights.
-              </p>
-              <div onClick={() => smoothScrollTo('program-highlights-section')} className="hidden md:block border border-black font-medium rounded-[2.5px] py-[15px] px-[30px] w-[150px] text-center mt-10 cursor-pointer hover:bg-black hover:text-white">Read More</div>
-            </div>
-            
-          </div>
-        </section>
+      <Hero 
+        imageSrc="/services/conditional-training-image.jpg" 
+        imageAlt="Strength Training Hero" 
+        programTitle="CONDITIONING TRAINING PROGRAM"
+        programDescription="My conditioning training program is tailored to help individuals of all fitness levels improve their overall fitness, enhance athletic performance, and boost endurance. With personalized plans targeting cardiovascular endurance, strength, agility, and flexibility, my dynamic workouts and expert coaching will guide you towards achieving your conditioning goals. Join me in unlocking your potential and taking your fitness and performance to new heights."
+      />
 
         <ProgramHighlights items={items} />
 
         
+        <TrainingProgram 
+          services={[
+            {
+              title: 'CONDITIONAL TRAINING PROGRAM',
+              duration: '12-Week Package',
+              price: 600,
+              description: [
+                'Description line goes here',
+                'Description line goes here',
+                'Description line goes here'
+              ]
+            },
+            {
+              title: 'CONDITIONAL TRAINING PROGRAM',
+              duration: '16-Week Package',
+              price: 720,
+              description: [
+                'Description line goes here',
+                'Description line goes here',
+                'Description line goes here'
+              ]
+            },
+          ]}
+          imageURL="/services/pricing-image.jpg"
+          email="kevinye@email.com"
+        />
+
         
-
-        <section className="flex flex-col md:flex-row pt-[80px] md:pt-[180px] pb-10 justify-center">
-          <img src="/services/pricing-image.jpg" alt="" className="md:hidden object-cover max-h-[1200px]" />
-          <div className="flex flex-col items-center w-full pt-20 md:w-1/2 md:pt-0">
-            <div className="p-10 mx05 shadow-custom">
-              <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
-              CONDITIONAL TRAINING PROGRAM
-              </p>
-              <h3 className="text-h3 md:text-h3-dsk font-medium pt-[18px]">
-                12-Week Package
-              </h3>
-              <p className="pt-[18px]">
-                <span className="font-bold text-h3 md:text-h3-dsk">$600</span> per package
-              </p>
-              <div className="flex pt-[30px]">
-                <img src="/services/program-bar-gold.svg" alt="" className="scale-50 super-sm:scale-75 lg:scale-100 -ml-10 super-sm:-ml-5 lg:-ml-0 w-[160px] h-3" />
-                <img src="/services/program-bar-black.svg" alt="" className="scale-50 super-sm:scale-75 lg:scale-100 -ml-20 super-sm:-ml-10 lg:-ml-0 w-[160px] h-3" />
-              </div>
-              <ul className="list-disc list-inside pt-[30px]">
-                <li>Description line goes here</li>
-                <li>Description line goes here</li>
-                <li>Description line goes here</li>
-              </ul>
-            </div>
-            <div className="p-10 mx-5 mt-10 shadow-custom">
-              <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
-                CONDITIONAL TRAINING PROGRAM
-              </p>
-              <h3 className="text-h3 font-medium pt-[18px]">
-                16-Week Package
-              </h3>
-              <p className="pt-[18px]">
-                <span className="font-bold text-h3 md:text-h3-dsk">$720</span> per package
-              </p>
-              <div className="flex pt-[30px]">
-                <img src="/services/program-bar-gold.svg" alt="" className="scale-50 super-sm:scale-75 lg:scale-100 -ml-10 super-sm:-ml-5 lg:-ml-0 w-[160px] h-3" />
-                <img src="/services/program-bar-black.svg" alt="" className="scale-50 super-sm:scale-75 lg:scale-100 -ml-20 super-sm:-ml-10 lg:-ml-0 w-[160px] h-3" />
-              </div>
-              <ul className="list-disc list-inside pt-[30px]">
-                <li>Description line goes here</li>
-                <li>Description line goes here</li>
-                <li>Description line goes here</li>
-              </ul>
-            </div>
-
-            
-            <div id="contact-section" className="mt-20">
-              
-              <a href="mailto:kevinye@email.com?subject=Conditional Training Inquiry">
-                <div className="bg-black text-white inline-block max-w-[190px] px-[30px] py-[15px] cursor-pointer hover:bg-gold hover:text-black">Contact Me Now</div>
-              </a>
-              <h2 className="pt-10 font-bold text-h2 md:text-h2-dsk">
-                (778)-1234-5678
-              </h2>
-                <a href="mailto: kevinye@email.com">
-                  <h2 className="pb-10 font-bold text-h2">
-                      kevinye@email.com
-                  </h2>
-                </a>
-              <Copyright />
-            </div>
-          </div>
-          
-          <img src="/services/pricing-image.jpg" alt="" className="hidden md:block object-cover w-1/2 max-h-[1200px]" />
-        </section>
 
       </main>
     </div>

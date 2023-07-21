@@ -1,6 +1,7 @@
 import Navbar from '@/components/services/ServicesNavbar';
 import Copyright from '@/components/Copyright';
 import ProgramHighlights from '@/components/services/ProgramHighlights';
+import TrainingProgram from '@/components/services/TrainingProgram';
 import React from 'react';
 import Image from 'next/image';
 import { smoothScrollTo } from '@/utils/scrollUtils';

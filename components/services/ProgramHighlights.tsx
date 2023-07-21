@@ -1,5 +1,7 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import useWindowWidth from '@/hooks/useWindowWidth';
+import { smoothScrollTo } from '@/utils/scrollUtils';
 
 type ProgramHighlightProps = {
   items: {
@@ -10,19 +12,8 @@ type ProgramHighlightProps = {
 };
 
 const ProgramHighlights = ({ items }: ProgramHighlightProps) => {
-  const [isMediumScreen, setIsMediumScreen] = useState(false);
-
-  useEffect(() => {
-    setIsMediumScreen(window.innerWidth >= 768);
-    const handleResize = () => {
-      setIsMediumScreen(window.innerWidth >= 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const windowWidth = useWindowWidth();
+  const isMediumScreen = windowWidth >= 768;
 
   return (
     <section id="program-highlights-section" className="flex flex-col items-center pt-10 md:pt-[90px] mx-[20px] md:mx-[60px] xl:mx-[200px]">
@@ -54,7 +45,7 @@ const ProgramHighlights = ({ items }: ProgramHighlightProps) => {
           <p className="pt-[24px]">
             Join my program and embark on a journey towards a stronger, healthier, and more confident you.
           </p>
-          <div className="inline-block font-medium border-black border rounded-[2.5px] py-[15px] px-[30px] max-w-[160px] cursor-pointer mt-[30px] hover:text-white hover:bg-black">
+          <div onClick={() => smoothScrollTo('contact-section')} className="inline-block font-medium border-black border rounded-[2.5px] py-[15px] px-[30px] max-w-[160px] cursor-pointer mt-[30px] hover:text-white hover:bg-black">
             Get In Touch
           </div>
         </div>

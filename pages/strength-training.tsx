@@ -1,6 +1,7 @@
 import Navbar from '@/components/services/ServicesNavbar';
 import Copyright from '@/components/Copyright';
 import ProgramHighlights from '@/components/services/ProgramHighlights';
+import TrainingProgram from '@/components/services/TrainingProgram';
 import React from 'react';
 import Image from 'next/image';
 import { smoothScrollTo } from '@/utils/scrollUtils';
@@ -56,72 +57,7 @@ export default function StrengthTraining() {
         <ProgramHighlights items={items} />
 
         
-        
-
-        <section className="flex flex-col md:flex-row pt-[80px] md:pt-[180px] pb-10 justify-center">
-        <img src="/services/pricing-image.jpg" alt="" className="md:hidden object-cover max-h-[1200px]" />
-          <div className="flex flex-col items-center w-full pt-20 md:w-1/2 md:pt-0">
-            <div className="p-10 mx-5 shadow-custom">
-              <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
-                STRENGTH TRAINING PROGRAM
-              </p>
-              <h3 className="text-h3 md:text-h3-dsk font-medium pt-[18px]">
-                12-Week Package
-              </h3>
-              <p className="pt-[18px]">
-                <span className="font-bold text-h3 md:text-h3-dsk">$600</span> per package
-              </p>
-              <div className="flex pt-[30px]">
-                <img src="/services/program-bar-gold.svg" alt="" className="scale-50 super-sm:scale-75 lg:scale-100 -ml-10 super-sm:-ml-5 lg:-ml-0 w-[160px] h-3" />
-                <img src="/services/program-bar-black.svg" alt="" className="scale-50 super-sm:scale-75 lg:scale-100 -ml-20 super-sm:-ml-10 lg:-ml-0 w-[160px] h-3" />
-              </div>
-              <ul className="list-disc list-inside pt-[30px]">
-                <li>Description line goes here</li>
-                <li>Description line goes here</li>
-                <li>Description line goes here</li>
-              </ul>
-            </div>
-            <div className="p-10 mx-5 mt-10 shadow-custom">
-              <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
-                STRENGTH TRAINING PROGRAM
-              </p>
-              <h3 className="text-h3 font-medium pt-[18px]">
-                16-Week Package
-              </h3>
-              <p className="pt-[18px]">
-                <span className="font-bold text-h3 md:text-h3-dsk">$720</span> per package
-              </p>
-              <div className="flex pt-[30px]">
-                <img src="/services/program-bar-gold.svg" alt="" className="scale-50 super-sm:scale-75 lg:scale-100 -ml-10 super-sm:-ml-5 lg:-ml-0 w-[160px] h-3" />
-                <img src="/services/program-bar-black.svg" alt="" className="scale-50 super-sm:scale-75 lg:scale-100 -ml-20 super-sm:-ml-10 lg:-ml-0 w-[160px] h-3" />
-              </div>
-              <ul className="list-disc list-inside pt-[30px]">
-                <li>Description line goes here</li>
-                <li>Description line goes here</li>
-                <li>Description line goes here</li>
-              </ul>
-            </div>
-
-            
-            <div id="contact-section" className="mt-20">
-              
-              <a href="mailto:kevinye@email.com?subject=Strength Training Inquiry">
-                <div className="bg-black text-white inline-block max-w-[190px] px-[30px] py-[15px] cursor-pointer hover:bg-gold hover:text-black">Contact Me Now</div>
-              </a>
-              <h2 className="pt-10 font-bold text-h2 md:text-h2-dsk">
-                (778)-1234-5678
-              </h2>
-              <a href="mailto: kevinye@email.com">
-                <h2 className="pb-10 font-bold text-h2">
-                    kevinye@email.com
-                </h2>
-              </a>
-              <Copyright />
-            </div>
-          </div>
-          
-          <img src="/services/pricing-image.jpg" alt="" className="hidden md:block object-cover w-1/2 max-h-[1200px]" />
-        </section>
+      
 
       </main>
     </div>
