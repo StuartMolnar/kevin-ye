@@ -41,7 +41,7 @@ export default function StrengthTraining() {
 
         <section className="flex flex-col md:flex-row">
           <Image 
-            src="/services/strength-training-hero-image.jpg" 
+            src="/services/conditional-training-image.jpg" 
             alt="Strength Training Hero" 
             width={694} 
             height={1041} 
