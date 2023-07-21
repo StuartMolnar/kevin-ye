@@ -1,9 +1,10 @@
 import Navbar from '@/components/services/ServicesNavbar';
 import ProgramHighlights from '@/components/services/ProgramHighlights';
 import TrainingProgram from '@/components/services/TrainingProgram';
+import Hero from '@/components/services/Hero';
 import React from 'react';
-import Image from 'next/image';
-import { smoothScrollTo } from '@/utils/scrollUtils';
+import { Fade } from 'react-awesome-reveal';
+
 
   const items = [
     {icon: "/services/avatar-icon.svg", title: "Customized Training Plans", description: "I will create a personalized strength training plan based on your fitness level, goals, and preferences. The program takes into account your current strength, mobility, and any specific limitations or considerations. Whether you&apos;re aiming to enhance athletic performance, increase functional strength, or improve overall fitness, our trainers will develop a plan that suits your needs."},
@@ -24,63 +25,48 @@ export default function StrengthTraining() {
 
       <main className="min-h-screen font-normal text-black bg-white font-poppins text-body pt-[135px] md:pt-[185px] md:mt-[60px]">
 
-        <section className="flex flex-col md:flex-row">
-          <Image 
-            src="/services/strength-training-image.jpg" 
-            alt="Strength Training Hero" 
-            width={694} 
-            height={1041} 
-            layout="responsive"
-            objectFit="cover"
-            className="md:w-3/5 md:max-h-[100vw] lg:max-h-[40vw]"
+        <Fade>
+          <Hero 
+            imageSrc="/services/strength-training-image.jpg" 
+            imageAlt="Strength Training Hero" 
+            programTitle="STRENGTH TRAINING PROGRAM"
+            programDescription="My strength training program is designed to help individuals of all fitness levels build strength, increase muscle mass, and achieve their personal fitness goals. Whether you are a beginner looking to establish a foundation or an experienced individual seeking to take your strength to the next level, my comprehensive program offers tailored workouts and expert guidance to ensure optimal results."
           />
-          <div className="flex flex-col items-center justify-center w-full">
-            <div className="flex flex-col md:max-w-[900px] px-[20px] md:px-20 pt-10 md:pt-0">
-              <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
-                STRENGTH TRAINING PROGRAM
-              </p>
-              <h1 className="pt-3 font-bold text-h1 md:text-h1-dsk">Become stronger, fitter, and more confident</h1>
-              <div className="flex pt-3">
-                  <img src="/about-bar-gold.svg" alt="" className="w-24 h-3" />
-                  <img src="/about-bar-black.svg" alt="" className="w-24 h-3 -ml-1" />
-              </div>
-              <p className="pt-10">
-                My strength training program is designed to help individuals of all fitness levels build strength, increase muscle mass, and achieve their personal fitness goals. Whether you are a beginner looking to establish a foundation or an experienced individual seeking to take your strength to the next level, my comprehensive program offers tailored workouts and expert guidance to ensure optimal results.
-              </p>
-              <div onClick={() => smoothScrollTo('program-highlights-section')} className="hidden md:block border border-black font-medium rounded-[2.5px] py-[15px] px-[30px] w-[150px] text-center mt-10 cursor-pointer hover:bg-black hover:text-white">Read More</div>
-            </div>
-            
-          </div>
-        </section>
-
-        <ProgramHighlights items={items} />
-
-        <TrainingProgram 
-          services={[
-            {
-              title: 'STRENGTH TRAINING PROGRAM',
-              duration: '12-Week Package',
-              price: 600,
-              description: [
-                'Description line goes here',
-                'Description line goes here',
-                'Description line goes here'
-              ]
-            },
-            {
-              title: 'STRENGTH TRAINING PROGRAM',
-              duration: '16-Week Package',
-              price: 720,
-              description: [
-                'Description line goes here',
-                'Description line goes here',
-                'Description line goes here'
-              ]
-            },
-          ]}
-          imageURL="/services/pricing-image.jpg"
-          email="kevinye@email.com"
-        />
+        </Fade>
+        
+        <Fade>
+          <ProgramHighlights items={items} />
+        </Fade>
+        
+        <Fade>
+          <TrainingProgram 
+            services={[
+              {
+                title: 'STRENGTH TRAINING PROGRAM',
+                duration: '12-Week Package',
+                price: 600,
+                description: [
+                  'Description line goes here',
+                  'Description line goes here',
+                  'Description line goes here'
+                ]
+              },
+              {
+                title: 'STRENGTH TRAINING PROGRAM',
+                duration: '16-Week Package',
+                price: 720,
+                description: [
+                  'Description line goes here',
+                  'Description line goes here',
+                  'Description line goes here'
+                ]
+              },
+            ]}
+            imageURL="/services/pricing-image.jpg"
+            email="kevinye@email.com"
+          />
+        </Fade>
+        
       
 
       </main>

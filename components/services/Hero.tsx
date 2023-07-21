@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { smoothScrollTo } from '@/utils/scrollUtils'; // make sure the path to the function is correct
+import { smoothScrollTo } from '@/utils/scrollUtils';
 
 interface HeroProps {
   imageSrc: string;

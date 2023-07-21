@@ -3,6 +3,7 @@ import Hero from '@/components/services/Hero';
 import ProgramHighlights from '@/components/services/ProgramHighlights';
 import TrainingProgram from '@/components/services/TrainingProgram';
 import React from 'react';
+import { Fade } from 'react-awesome-reveal';
 
   const items = [
     {icon: "/services/avatar-icon.svg", title: "Tailored Conditioning Plans", description: "I will create a customized conditioning plan based on your specific fitness goals, current fitness level, and individual needs. The program will be designed to target key components of conditioning, such as cardiovascular endurance, muscular endurance, agility, speed, and flexibility. With a personalized plan, we can optimize your training and achieve significant improvements in your overall fitness."},
@@ -23,42 +24,50 @@ export default function StrengthTraining() {
 
       <main className="min-h-screen font-normal text-black bg-white font-poppins text-body pt-[135px] md:pt-[185px] md:mt-[60px]">
 
-      <Hero 
-        imageSrc="/services/conditional-training-image.jpg" 
-        imageAlt="Strength Training Hero" 
-        programTitle="CONDITIONING TRAINING PROGRAM"
-        programDescription="My conditioning training program is tailored to help individuals of all fitness levels improve their overall fitness, enhance athletic performance, and boost endurance. With personalized plans targeting cardiovascular endurance, strength, agility, and flexibility, my dynamic workouts and expert coaching will guide you towards achieving your conditioning goals. Join me in unlocking your potential and taking your fitness and performance to new heights."
-      />
-
-        <ProgramHighlights items={items} />
-
-        
-        <TrainingProgram 
-          services={[
-            {
-              title: 'CONDITIONAL TRAINING PROGRAM',
-              duration: '12-Week Package',
-              price: 600,
-              description: [
-                'Description line goes here',
-                'Description line goes here',
-                'Description line goes here'
-              ]
-            },
-            {
-              title: 'CONDITIONAL TRAINING PROGRAM',
-              duration: '16-Week Package',
-              price: 720,
-              description: [
-                'Description line goes here',
-                'Description line goes here',
-                'Description line goes here'
-              ]
-            },
-          ]}
-          imageURL="/services/pricing-image.jpg"
-          email="kevinye@email.com"
+      <Fade>
+        <Hero 
+          imageSrc="/services/conditional-training-image.jpg" 
+          imageAlt="Conditioning Training Hero" 
+          programTitle="CONDITIONING TRAINING PROGRAM"
+          programDescription="My conditioning training program is tailored to help individuals of all fitness levels improve their overall fitness, enhance athletic performance, and boost endurance. With personalized plans targeting cardiovascular endurance, strength, agility, and flexibility, my dynamic workouts and expert coaching will guide you towards achieving your conditioning goals. Join me in unlocking your potential and taking your fitness and performance to new heights."
         />
+      </Fade>
+      
+
+        <Fade>
+          <ProgramHighlights items={items} />
+        </Fade>
+        
+
+        <Fade>
+          <TrainingProgram 
+            services={[
+              {
+                title: 'CONDITIONAL TRAINING PROGRAM',
+                duration: '12-Week Package',
+                price: 600,
+                description: [
+                  'Description line goes here',
+                  'Description line goes here',
+                  'Description line goes here'
+                ]
+              },
+              {
+                title: 'CONDITIONAL TRAINING PROGRAM',
+                duration: '16-Week Package',
+                price: 720,
+                description: [
+                  'Description line goes here',
+                  'Description line goes here',
+                  'Description line goes here'
+                ]
+              },
+            ]}
+            imageURL="/services/pricing-image.jpg"
+            email="kevinye@email.com"
+          />
+        </Fade>
+        
 
         
 
