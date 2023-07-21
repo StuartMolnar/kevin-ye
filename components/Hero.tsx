@@ -47,7 +47,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="absolute hidden xl:block right-0 customHeroLogo:left-[50%] transition-all duration-200 ease-in-out">
+          <div className="absolute hidden xl:block right-0 customHeroLogo:left-[60%] transition-all duration-200 ease-in-out">
             <Image 
               src="/kevin-ye-logo-hero.svg" 
               alt=""

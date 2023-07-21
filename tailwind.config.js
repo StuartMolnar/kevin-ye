@@ -12,7 +12,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'customHeroLogo': '1650px',
+        'customHeroLogo': '1950px',
         'xl': '1350px',
         'super-sm': '315px',
       },
