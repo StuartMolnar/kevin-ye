@@ -1,4 +1,3 @@
-// components/ServiceSection.tsx
 import React from 'react';
 import Copyright from '@/components/Copyright';
 
@@ -17,11 +16,13 @@ interface Props {
 
 const TrainingProgram: React.FC<Props> = ({ services, imageURL, email }) => {
   return (
-    <section className="flex flex-col md:flex-row pt-[80px] md:pt-[180px] pb-10 justify-center">
-      <img src={imageURL} alt="" className="md:hidden object-cover max-h-[1200px]" />
-      <div className="flex flex-col items-center w-full pt-20 md:w-1/2 md:pt-0">
+    <section id="training-program-section" className="flex flex-col items-center pt-10 md:pt-[90px]">
+      <h1 className="font-bold text-h1 md:text-h1-dsk">Program Highlights</h1>
+      <div className="grid items-start grid-cols-1 md:grid-cols-2 pt-[60px] md:gap-10 gap-y-5">
+
+      <div className="flex flex-col w-auto col-span-1 pt-20 mx-5 md:mr-0 md:ml-[60px] xl:ml-[200px] space-y-10 md:pt-0">
         {services.map((service, index) => (
-          <div className="p-10 mx05 shadow-custom" key={index}>
+          <div className="p-10 shadow-custom" key={index}>
             <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
               {service.title}
             </p>
@@ -43,7 +44,7 @@ const TrainingProgram: React.FC<Props> = ({ services, imageURL, email }) => {
           </div>
         ))}
 
-        <div id="contact-section" className="mt-20">
+        <div id="contact-section" className="pt-20 mx-auto md:mx-0">
           <a href={`mailto:${email}?subject=Conditional Training Inquiry`}>
             <div className="bg-black text-white inline-block max-w-[190px] px-[30px] py-[15px] cursor-pointer hover:bg-gold hover:text-black">Contact Me Now</div>
           </a>
@@ -57,9 +58,11 @@ const TrainingProgram: React.FC<Props> = ({ services, imageURL, email }) => {
             </a>
           <Copyright />
         </div>
+
       </div>
-      
-      <img src={imageURL} alt="" className="hidden md:block object-cover w-1/2 max-h-[1200px]" />
+        
+        <img src={imageURL} alt="Training Program Image" className="order-first md:order-last object-cover max-h-[1200px] col-span-1" />
+      </div>
     </section>
   );
 };
