@@ -37,16 +37,39 @@ const AboutSection = () => {
                 About Kevin Ye
               </h1>
               <div className="hidden pt-3 md:flex">
-                <img src="/about-bar-gold.svg" alt="" className="w-24 h-3" />
+                <img src="/about-bar-gold.svg" alt="" className="w-24 h-3 -ml-1" />
                 <img src="/about-bar-black.svg" alt="" className="w-24 h-3 -ml-1" />
               </div>
               <div className="md:hidden flex pt-[18px] ">
                 <img src="/hero-bar-gold.svg" alt="" className="w-[73px]  h-[5px]" />
                 <img src="/hero-bar-black.svg" alt="" className="w-[73px] h-[5px] ml-1" />
               </div>
-              <p className="mt-[24px] md:mt-10 mb-[40px] md:mb-16 max-h-[450px] md:max-h-[10000px] overflow-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus ut neque aliquet vehicula quis vitae orci. Suspendisse dapibus fermentum est a gravida. Curabitur ut nunc nulla. Nunc at purus et turpis tincidunt scelerisque. Suspendisse potenti. Sed sed porttitor lacus. Nunc et ante id purus maximus rhoncus. Quisque ac est eu nunc commodo molestie id at dui. Aenean egestas tellus ante, ut maximus nunc luctus eget. Sed tincidunt id tortor quis venenatis. Suspendisse rutrum accumsan congue. Proin pharetra tincidunt enim, et fringilla leo interdum in. Cras eget magna egestas, semper felis facilisis, volutpat nisi. Donec ex massa, semper eu urna at, bibendum dapibus nulla. Sed tristique dignissim feugiat.
-              </p>
+              <div className="flex-row mt-[24px] md:mt-10 mb-[40px] md:mb-16 max-h-[450px] md:max-h-[10000px] overflow-auto space-y-4">
+                <p className="">
+                My name is Kevin Ye and I am a Fitness Coach with a background in Personal Training and Swim Coaching.  
+                </p>
+                
+                <p className="">
+                I specialize in helping people discover their passion for fitness. I believe everyone goes to the gym for their own unique reasons. However the most important part to anyone’s journey is consistency.
+                </p>
+                
+                <p className="">
+                You’re not going to make progress if you’re injured every couple months from poor programming and weight management. What about following an unsustainable diet plan hoping to lose as much weight as possible just to regain everything back and suffer from starvation for no reason?
+                </p>
+                
+                <p className="">
+                Sound too familiar? Don’t worry, I’ve been there too. 
+                </p>
+                
+                <p className="">
+                That’s why through my proven methods, I am able to deliver my clients the most optimal training plan that is suitable solely for their level of efficacy and commitment. 
+                </p>
+                
+                <p className="">
+                I will help develop the right program catered just for you, and keep you accountable throughout the entire journey. 
+                </p>
+
+              </div>
             </div>
         </section>
     
