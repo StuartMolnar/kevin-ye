@@ -5,7 +5,7 @@ import subprocess
 cwebp_path = "C:/WebDevelopment/libwebp-1.3.1-windows-x64/bin/cwebp.exe"
 
 # quality of the output image
-quality = 40
+quality = 100
 
 # walk the current directory
 for dirpath, dirnames, filenames in os.walk("."):
@@ -16,6 +16,6 @@ for dirpath, dirnames, filenames in os.walk("."):
             # full path to the jpg file
             jpg_file = os.path.join(dirpath, filename)
             # full path to the webp file
-            webp_file = os.path.join(dirpath, os.path.splitext(filename)[0] + "-downscaled.webp")
+            webp_file = os.path.join(dirpath, os.path.splitext(filename)[0] + ".webp")
             # convert jpg to webp using cwebp
             subprocess.run([cwebp_path, "-q", str(quality), jpg_file, "-o", webp_file])
