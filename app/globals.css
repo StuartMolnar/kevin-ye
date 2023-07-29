@@ -12,6 +12,10 @@
   right: auto !important;
 }
 
+.slick-arrow {
+  display: none !important;
+}
+
 details > summary {
   list-style: none;
 }
