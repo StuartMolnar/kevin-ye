@@ -32,7 +32,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ item}) => {
         <p className="pt-[18px] md:block">{item.description}</p>
       ) : (
         <details className="overflow-hidden pt-[18px]">
-          <summary className="cursor-pointer text-gold md:hidden">
+          <summary className="cursor-pointer select-none text-gold md:hidden">
             Read More
           </summary>
           <p className="pt-[18px]">{item.description}</p>
