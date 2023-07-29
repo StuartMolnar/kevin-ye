@@ -19,7 +19,7 @@ const TrainingProgram: React.FC<Props> = ({ services, imageURL, email }) => {
     <section id="training-program-section" className="flex flex-col items-center pt-10 md:pt-[90px]">
       <div className="grid items-start grid-cols-1 md:grid-cols-2 pt-[60px] md:gap-10 gap-y-5">
 
-      <div className="flex flex-col w-auto col-span-1 pt-[30px] mx-5 space-y-6 md:space-y-10 md:mx-0 md:pt-0 ">
+      <div className="flex flex-col w-auto col-span-1 pt-[30px] mx-5 space-y-6 md:space-y-10 md:pt-0 ">
         {services.map((service, index) => (
           <div className="p-10 shadow-custom" key={index}>
             <p className="font-medium text-header-sub md:text-header-sub-dsk text-gold">
