@@ -17,15 +17,14 @@ const Hero: React.FC<HeroProps> = ({ imageSrc, imageAlt, programTitle, programDe
 
   return (
     <section className="flex flex-col md:flex-row">
-      <div className="relative md:w-3/5 md:max-h-[100vw] lg:max-h-[40vw]">
+      <div className="md:w-3/5 md:max-h-[100vw] lg:max-h-[40vw]">
         <Image 
             src={imageSrc} 
             alt={imageAlt} 
             layout="responsive"
             width={694}
             height={1041}
-            objectFit="cover"
-            className="w-full h-full"
+            className="object-cover w-full h-full"
             placeholder={blurhash ? "blur" : undefined}
             blurDataURL={blurhash ? `data:image/svg+xml;base64,${blurhash}` : undefined}
         />
